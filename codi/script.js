@@ -1,4 +1,4 @@
-// DOCUMENT DEL TEU PROFESSOR: MOSTRAR O AMAGAR EL WIDGET DEL XAT
+
 document.getElementById('chat-toggle').addEventListener('click', function () {
   const widget = document.getElementById('chatbot-widget');
   
