@@ -11,7 +11,7 @@
   <!-- Secció d'introducció al món de la cuina -->
   <section class="introduccio">
     <h2>Per què hauries de començar a cuinar?</h2>
-    <p>La cuina és un art que combina la creativitat i la passió. Explorar noves receptes i tècniques culinàries no només enriqueix els nostres paladars, sinó que també crea moments memorables amb els nostres éssers estimats. Amb inspiració i una mica de pràctica, podràs convertir-te en el xef dels teus somnis!</p>
+    <p>La cuina és un art que combina la creativitat i la passió. Explorar noves receptes i tècniques culinàries no només enriqueix els nostres paladars, si no que també crea moments memorables amb els nostres éssers estimats. Amb inspiració i una mica de pràctica, podràs convertir-te en el xef dels teus somnis!</p>
   </section>
 
   <!-- Targetes per a les accions de frases i idees de receptes -->
@@ -19,25 +19,30 @@
     <div class="tarjeta-rosa">
       <h3>Frases inspiradores</h3>
       <p>Si penses que cuinar no serveix de res o ja no tens ganes, llegeix aquestes frases a veure si la teva ment canvia!</p>
-      <button class="boto-clica">Clica!</button>
+      <!-- Afegit id per controlar el clic des de JavaScript -->
+      <button class="boto-clica" id="btn-frases">Clica!</button>
     </div>
 
     <div class="tarjeta-rosa">
       <h3>Idees de receptes fàcils, ràpides i bones</h3>
       <p>Si no saps què cuinar, consulta aquest espai!</p>
-      <button class="boto-clica">Clica!</button>
+      <!-- Afegit id per controlar el clic des de JavaScript -->
+      <button class="boto-clica" id="btn-receptes">Clica!</button>
     </div>
   </div>
 
-  <!-- Contenidor per al carrusel de fotografies -->
+  <!-- Contenidor per al carrusel de fotografies automàtic -->
   <section class="seccio-carrusel">
     <h3>FOTOS QUE VAN PASSANT</h3>
     <div class="carrusel-contenidor">
-      <div class="carrusel-diapositives">
+      <!-- Les tres diapositives que es mouran soles -->
+      <div class="carrusel-diapositives" id="carrusel-slides">
         <div class="slide bg-1"><span>📸 Cuina Creativa</span></div>
+        <div class="slide bg-2"><span>🔪 Estris de Cuina</span></div>
+        <div class="slide bg-3"><span>🍕 Receptes Bones</span></div>
       </div>
-      <button class="boto-carrusel prev">❮</button>
-      <button class="boto-carrusel next">❯</button>
+      <button class="boto-carrusel prev" id="btn-prev">❮</button>
+      <button class="boto-carrusel next" id="btn-next">❯</button>
     </div>
   </section>
 
@@ -51,7 +56,7 @@
 <!-- Botó flotant per obrir el widget del xat -->
 <button id="chat-toggle">💬</button>
 
-<!-- Estructura del widget del xatbot (comença ocult amb display:none) -->
+<!-- Estructura del widget del xatbot -->
 <div id="chatbot-widget" style="display:none;">
  <div id="chat-header">Cookbot</div>
  <div id="chat-body">
@@ -60,5 +65,8 @@
  <div id="chat-input">
    <input type="text" id="user-input" placeholder="Escriu una pregunta..." />
    <button onclick="enviaMissatge()">📨</button>
+ </div>
+</div>
+
  </div>
 </div>
