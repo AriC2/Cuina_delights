@@ -1,66 +1,64 @@
-<!-- PORTADA PRINCIPAL -->
+<!-- Portada principal de la pàgina web -->
 <header class="portada">
   <p class="subtitol">GAUDEIX DE LA CUINA</p>
   <h1 class="titol-principal">Cuina delights</h1>
   <a href="#contingut" class="boto-comencar">COMENÇA A CUINAR!</a>
 </header>
 
-<!-- CONTINGUT PRINCIPAL -->
+<!-- Contingut de la secció principal -->
 <main id="contingut" class="contenidor">
   
-  <!-- INTRODUCCIÓ -->
+  <!-- Secció d'introducció al món de la cuina -->
   <section class="introduccio">
     <h2>Per què hauries de començar a cuinar?</h2>
-    <p>La cuina és un art que combina la creativitat i la passió. Explorar noves receptes i tècniques culinàries no només enriqueix els nostres paladars, sinó que també crea moments memorables amb els nosaltres éssers estimats. Amb inspiració i una mica de pràctica, podràs convertir-te en el xef dels teus somnis!</p>
+    <p>La cuina és un art que combina la creativitat i la passió. Explorar noves receptes i tècniques culinàries no només enriqueix els nostres paladars, sinó que també crea moments memorables amb els nostres éssers estimats. Amb inspiració i una mica de pràctica, podràs convertir-te en el xef dels teus somnis!</p>
   </section>
 
-  <!-- BLOC D'ACCIONS -->
+  <!-- Targetes per a les accions de frases i idees de receptes -->
   <div class="graella-accions">
-    <!-- Secció Frases -->
-    <div class="tarjeta-basica">
+    <div class="tarjeta-rosa">
       <h3>Frases inspiradores</h3>
       <p>Si penses que cuinar no serveix de res o ja no tens ganes, llegeix aquestes frases a veure si la teva ment canvia!</p>
       <button class="boto-clica">Clica!</button>
     </div>
 
-    <!-- Secció Receptes -->
-    <div class="tarjeta-basica">
+    <div class="tarjeta-rosa">
       <h3>Idees de receptes fàcils, ràpides i bones</h3>
       <p>Si no saps què cuinar, consulta aquest espai!</p>
       <button class="boto-clica">Clica!</button>
     </div>
   </div>
 
-  <!-- CARRUSEL ESTÀTIC -->
+  <!-- Contenidor per al carrusel de fotografies -->
   <section class="seccio-carrusel">
     <h3>FOTOS QUE VAN PASSANT</h3>
     <div class="carrusel-contenidor">
       <div class="carrusel-diapositives">
-        <div class="slide"><span>📸 Cuina Creativa (Imatge fixa en V1)</span></div>
+        <div class="slide bg-1"><span>📸 Cuina Creativa</span></div>
       </div>
       <button class="boto-carrusel prev">❮</button>
       <button class="boto-carrusel next">❯</button>
     </div>
   </section>
 
-  <!-- PEU DE PÀGINA -->
+  <!-- Peu de pàgina final -->
   <footer class="peu">
     <h2>No deixis de cuinar!</h2>
     <p>Consulta aquesta web cada cop que ho necessitis!</p>
   </footer>
 </main>
 
-<!-- BOTÓ FLOTANT PER OBRIR EL WIDGET -->
+<!-- Botó flotant per obrir el widget del xat -->
 <button id="chat-toggle">💬</button>
 
-<!-- WIDGET DEL XATBOT (AMAGAT D'INICI AMB EL STYLE) -->
+<!-- Estructura del widget del xatbot (comença ocult amb display:none) -->
 <div id="chatbot-widget" style="display:none;">
-  <div id="chat-header">Cookbot</div>
-  <div id="chat-body">
-    <div class="message bot">Hola! Sóc en Cookbot, sé molt de cuina i puc resoldre els teus dubtes!</div>
-  </div>
-  <div id="chat-input">
-    <input type="text" placeholder="Escriu una pregunta..." disabled />
-    <button>📨</button>
-  </div>
+ <div id="chat-header">Cookbot</div>
+ <div id="chat-body">
+   <div class="message bot">Hola! Sóc en Cookbot, sé molt de cuina i puc resoldre els teus dubtes!</div>
+ </div>
+ <div id="chat-input">
+   <input type="text" id="user-input" placeholder="Escriu una pregunta..." />
+   <button onclick="enviaMissatge()">📨</button>
+ </div>
 </div>
