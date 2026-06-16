@@ -1,55 +1,66 @@
+<!-- PORTADA PRINCIPAL -->
+<header class="portada">
+  <p class="subtitol">GAUDEIX DE LA CUINA</p>
+  <h1 class="titol-principal">Cuina delights</h1>
+  <a href="#contingut" class="boto-comencar">COMENÇA A CUINAR!</a>
+</header>
 
-<link rel="stylesheet" href="style.css">
+<!-- CONTINGUT PRINCIPAL -->
+<main id="contingut" class="contenidor">
+  
+  <!-- INTRODUCCIÓ -->
+  <section class="introduccio">
+    <h2>Per què hauries de començar a cuinar?</h2>
+    <p>La cuina és un art que combina la creativitat i la passió. Explorar noves receptes i tècniques culinàries no només enriqueix els nostres paladars, sinó que també crea moments memorables amb els nostres éssers estimats. Amb inspiració i una mica de pràctica, podràs convertir-te en el xef dels teus somnis!</p>
+  </section>
 
-
-
-
-<div id="app">
-  <header>
-    <h1>
-      GAUDEIX DE LA CUINA
-    </h1>
-    <h1>
-      Aprèn noves receptes i no paris de cuinar!
-    </h1>
-  </header>
-  <nav>
-    <ul>
-      <li>
-        <a href="#" onclick=
-        "changeContent('home')">
-          Inici
-        </a>
-      </li>
-      <li>
-        <a href="#" onclick=
-        "changeContent('about')">
-          Frases inspiradores
-        </a>
-      </li>
-      <li>
-        <a href="#" onclick=
-        "changeContent('contact')">
-          Contacte
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <main>
-    <div id="content">
-      <img src=
-"https://www.shutterstock.com/image-vector/delicious-chocolate-chip-cookies-vector-600nw-2515124253.jpg">
-      <h2>Benvingut al món de la cuina</h2>
-      <p>
-        Aquí podràs desenvolupar els teus coneixements culinaris i aprenddre noves receptes d'una forma divertida i entretinguda.
-      </p>
-      <p>
-        Si vols aprendre receptes de postres fàcils i delicioses visita aquesta pàgina:
-        <a href="https://recetasdecocina.elmundo.es/recetas/postres" target="_blank">
-          Nyam!
-        </a>.
-      </p>
+  <!-- BLOC D'ACCIONS -->
+  <div class="graella-accions">
+    <!-- Secció Frases -->
+    <div class="tarjeta-basica">
+      <h3>Frases inspiradores</h3>
+      <p>Si penses que cuinar no serveix de res o ja no tens ganes, llegeix aquestes frases a veure si la teva ment canvia!</p>
+      <button class="boto-clica">Clica!</button>
     </div>
-  </main>
+
+    <!-- Secció Receptes -->
+    <div class="tarjeta-basica">
+      <h3>Idees de receptes fàcils, ràpides i bones</h3>
+      <p>Si no saps què cuinar, consulta aquest espai!</p>
+      <button class="boto-clica">Clica!</button>
+    </div>
+  </div>
+
+  <!-- CARRUSEL ESTÀTIC -->
+  <section class="seccio-carrusel">
+    <h3>FOTOS QUE VAN PASSANT</h3>
+    <div class="carrusel-contenidor">
+      <div class="carrusel-diapositives">
+        <div class="slide"><span>📸 Cuina Creativa (Imatge fixa en V1)</span></div>
+      </div>
+      <button class="boto-carrusel prev">❮</button>
+      <button class="boto-carrusel next">❯</button>
+    </div>
+  </section>
+
+  <!-- PEU DE PÀGINA -->
+  <footer class="peu">
+    <h2>No deixis de cuinar!</h2>
+    <p>Consulta aquesta web cada cop que ho necessitis!</p>
+  </footer>
+</main>
+
+<!-- WIDGET DEL XATBOT (ESTÀTIC I SENSE COLORS) -->
+<div id="chatbot-widget">
+  <div id="chat-header">Cookbot</div>
+  <div id="chat-body">
+    <div class="message bot">Hola! Sóc en Cookbot, sé molt de cuina i puc resoldre els teus dubtes! (Maqueta estàtica)</div>
+  </div>
+  <div id="chat-input">
+    <input type="text" placeholder="Escriu una pregunta..." disabled />
+    <button>📨</button>
+  </div>
+</div>
+
 </div>
 <script src="script.js"></script>
