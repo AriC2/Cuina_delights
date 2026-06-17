@@ -1,4 +1,4 @@
-/* Estils generals de la pàgina web i paleta rosa */
+/* Reseteig de marges i definició de la tipografia base de la web */
 * {
   margin: 0;
   padding: 0;
@@ -6,16 +6,40 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Transició suau per als enllaços d'ancla de la pàgina */
 html {
   scroll-behavior: smooth;
 }
 
+/* Color de fons de l'aplicació i color de text general */
 body {
-  background-color: #fce4ec; /* Fons rosa clar */
+  background-color: #fce4ec;
   color: #880e4f;
 }
 
-/* Disseny de la capçalera de benvinguda */
+/* ANIMACIÓ NOU: Classe per fer aparèixer la web de manera suau al principi */
+.transicio-suau {
+  animation: efecteAparicio 0.8s ease-out forwards;
+}
+
+/* Definició dels passos de l'animació de transparència per a tota la web */
+@keyframes efecteAparicio {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ANIMACIÓ NOU: Classe especial per a la transició de les frases inspiradores */
+.transicio-frases {
+  animation: efecteDesplegar 0.6s ease-out forwards;
+}
+
+/* Definició de l'animació perquè les frases surtin lliscant suaument */
+@keyframes efecteDesplegar {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estils per a la capçalera a pantalla completa amb gradient */
 .portada {
   background: linear-gradient(135deg, #ffc1e3, #fce4ec);
   min-height: 100vh;
@@ -27,6 +51,7 @@ body {
   padding: 20px;
 }
 
+/* Format del text secundari de la benvinguda de la portada */
 .subtitol {
   font-size: 18px;
   font-weight: bold;
@@ -35,36 +60,39 @@ body {
   margin-bottom: 10px;
 }
 
+/* Format del títol principal superior de l'aplicació */
 .titol-principal {
   font-size: 64px;
   color: #880e4f;
   margin-bottom: 30px;
 }
 
-/* Botó començar de la portada amb efecte d'escala */
+/* Botó de l'entrada principal amb animació de transformació de mida */
 .boto-comencar {
   background-color: #880e4f;
   color: white;
   padding: 15px 30px;
+  border: none;
   border-radius: 5px;
-  text-decoration: none;
   font-weight: bold;
   font-size: 16px;
-  display: inline-block;
-  transition: transform 0.3s ease; /* Fa que es faci gran de forma suau */
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
+/* Increment de la mida del botó quan el ratolí està a sobre */
 .boto-comencar:hover {
-  transform: scale(1.1); /* S'agrandas un 10% al passar el ratolí */
+  transform: scale(1.1);
 }
 
-/* Estructura del bloc central d'introducció */
+/* Disseny estructural del bloc de contingut intern */
 .contenidor {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
+/* Caixa contenidora blanca de l'apartat d'introducció descriptiva */
 .introduccio {
   text-align: center;
   margin-bottom: 40px;
@@ -84,7 +112,7 @@ body {
   color: #555;
 }
 
-/* Distribució en columnes de les targetes d'acció */
+/* Distribució en columnes simètriques de les targetes interactives */
 .graella-accions {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -92,6 +120,7 @@ body {
   margin-bottom: 40px;
 }
 
+/* Caixes de selecció amb orientació interna alineada al centre */
 .tarjeta-rosa {
   background-color: #f8bbd0;
   padding: 25px;
@@ -115,7 +144,7 @@ body {
   line-height: 1.4;
 }
 
-/* Botons de clica de les targetes amb efecte d'escala */
+/* Botons interactius de les targetes amb transició de tamany suau */
 .boto-clica {
   background-color: #c2185b;
   color: white;
@@ -124,24 +153,85 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: transform 0.3s ease; /* Transició suau */
+  transition: transform 0.3s ease;
 }
 
 .boto-clica:hover {
-  transform: scale(1.1); /* Es fa més gran al posar el ratolí */
+  transform: scale(1.1);
 }
 
-/* Estils de la maqueta del carrusel de fotografies */
+/* Maquetació de la nova zona desplegable de frases en dues seccions */
+.bloc-frases-intern {
+  display: flex;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Bloc esquerre de color fúcsia per a la capçalera de les frases */
+.esquerra-frases {
+  width: 40%;
+  background-color: #ec407a;
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.esquerra-frases h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.esquerra-frases p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Bloc dret de color rosa pàlid per llistar les frases verticals */
+.dreta-frases {
+  width: 60%;
+  background-color: #fff1f5;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.bloc-frase {
+  border-bottom: 1px solid #f8bbd0;
+  padding-bottom: 10px;
+}
+
+.bloc-frase:last-child {
+  border-bottom: none;
+}
+
+.frase {
+  font-size: 16px;
+  font-weight: bold;
+  color: #880e4f;
+  margin-bottom: 5px;
+}
+
+/* Format dels noms dels autors a sota de cada cita de cuina */
+.autor {
+  font-size: 12px;
+  color: #c2185b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Configuració del marc de retallada de l'espai de les fotografies */
 .seccio-carrusel {
   text-align: center;
   margin-bottom: 60px;
 }
 
-.seccio-carrusel h3 {
-  margin-bottom: 20px;
-  color: #c2185b;
-}
-
+/* Caixa principal que enquadra el visor i retalla el que sobresurt */
 .carrusel-contenidor {
   position: relative;
   max-width: 100%;
@@ -152,13 +242,15 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Contenidor adaptat per moure de cop 4 imatges en línia horitzontal */
 .carrusel-diapositives {
   display: flex;
-  width: 300%;
+  width: 400%;
   height: 100%;
   transition: transform 0.5s ease-in-out;
 }
 
+/* Estils de les zones internes del carrusel de fotografies horitzontal */
 .slide {
   width: 100%;
   height: 100%;
@@ -170,10 +262,32 @@ body {
   font-weight: bold;
 }
 
-.bg-1 { background-color: #ec407a; }
-.bg-2 { background-color: #ab47bc; }
-.bg-3 { background-color: #26a69a; }
+/* LES 4 RUTES LOCALS DIRECTES A LA TEVA CARPETA D'IMATGES DE GITHUB */
+.bg-1 { 
+  background-image: url('imatges/image1.png'); 
+  background-size: cover; 
+  background-position: center; 
+}
 
+.bg-2 { 
+  background-image: url('imatges/image2.png'); 
+  background-size: cover; 
+  background-position: center; 
+}
+
+.bg-3 { 
+  background-image: url('imatges/image3.png'); 
+  background-size: cover; 
+  background-position: center; 
+}
+
+.bg-4 { 
+  background-image: url('imatges/image4.png'); 
+  background-size: cover; 
+  background-position: center; 
+}
+
+/* Botons de direcció fets amb un fons blanquinós transparent */
 .boto-carrusel {
   position: absolute;
   top: 50%;
@@ -187,20 +301,22 @@ body {
   transition: transform 0.2s ease;
 }
 
+/* Efecte d'augment quan es passa el ratolí sobre les fletxes del visor */
 .boto-carrusel:hover {
-  transform: translateY(-50%) scale(1.1); /* S'agrandas una mica al passar-hi el ratolí */
+  transform: translateY(-50%) scale(1.1);
 }
 
 .prev { left: 15px; }
 .next { right: 15px; }
 
+/* Separador i format de la zona inferior de tancament de la pàgina */
 .peu {
   text-align: center;
   padding-top: 20px;
   border-top: 2px dashed #f8bbd0;
 }
 
-/* Estils del xatbot del pas 3 de la web (sense canvis de disseny) */
+/* Estils de la finestra del xatbot del codi de l'usuari */
 #chatbot-widget {
   position: fixed;
   bottom: 20px;
@@ -218,6 +334,7 @@ body {
   z-index: 9999;
 }
 
+/* Color de fons de la barra superior del xatbot */
 #chat-header {
   background-color: #f777cc;
   color: rgb(231, 185, 243);
@@ -226,6 +343,7 @@ body {
   font-weight: bold;
 }
 
+/* Àrea per anar acumulant el llistat vertical dels missatges */
 #chat-body {
   flex: 1;
   padding: 10px;
@@ -237,16 +355,19 @@ body {
   margin: 5px 0;
 }
 
+/* Color identificatiu de text per a l'usuari de la aplicació */
 .user {
   text-align: right;
   color: #8d1a87;
 }
 
+/* Color identificatiu de text per a les respostes automàtiques del bot */
 .bot {
   text-align: left;
   color: #5e1979;
 }
 
+/* Mòdul de text de la barra inferior per introduir els caràcters */
 #chat-input {
   display: flex;
   border-top: 1px solid #d3b0f3;
@@ -259,7 +380,7 @@ body {
   font-size: 14px;
 }
 
-/* El botó d'enviar missatge del xat també es fa gran */
+/* Botó d'enviament de dades del xat amb transició elàstica d'escala */
 #chat-input button {
   padding: 10px;
   background-color: #ac2cd3;
@@ -269,11 +390,12 @@ body {
   transition: transform 0.2s ease;
 }
 
+/* Efecte per faire el botó del sobre més gran en passar el ratolí */
 #chat-input button:hover {
   transform: scale(1.15);
 }
 
-/* El botó rodó flotant també s'agranda al passar el ratolí */
+/* Botó rodó flotant per a l'obertura general de la interfície de conversa */
 #chat-toggle {
   position: fixed;
   bottom: 20px;
@@ -290,6 +412,7 @@ body {
   transition: transform 0.3s ease;
 }
 
+/* Efecte per fer el botó interactiu del globus més gran al posar-hi el ratolí */
 #chat-toggle:hover {
   transform: scale(1.1);
 }
