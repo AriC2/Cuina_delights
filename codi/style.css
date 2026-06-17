@@ -41,6 +41,7 @@ body {
   margin-bottom: 30px;
 }
 
+/* Botó començar de la portada amb efecte d'escala */
 .boto-comencar {
   background-color: #880e4f;
   color: white;
@@ -49,6 +50,12 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
+  display: inline-block;
+  transition: transform 0.3s ease; /* Fa que es faci gran de forma suau */
+}
+
+.boto-comencar:hover {
+  transform: scale(1.1); /* S'agrandas un 10% al passar el ratolí */
 }
 
 /* Estructura del bloc central d'introducció */
@@ -108,14 +115,20 @@ body {
   line-height: 1.4;
 }
 
+/* Botons de clica de les targetes amb efecte d'escala */
 .boto-clica {
   background-color: #c2185b;
   color: white;
   border: none;
   padding: 10px 25px;
   border-radius: 5px;
-  cursor: not-allowed;
-  opacity: 0.9;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s ease; /* Transició suau */
+}
+
+.boto-clica:hover {
+  transform: scale(1.1); /* Es fa més gran al posar el ratolí */
 }
 
 /* Estils de la maqueta del carrusel de fotografies */
@@ -141,8 +154,9 @@ body {
 
 .carrusel-diapositives {
   display: flex;
-  width: 100%;
+  width: 300%;
   height: 100%;
+  transition: transform 0.5s ease-in-out;
 }
 
 .slide {
@@ -157,18 +171,24 @@ body {
 }
 
 .bg-1 { background-color: #ec407a; }
+.bg-2 { background-color: #ab47bc; }
+.bg-3 { background-color: #26a69a; }
 
 .boto-carrusel {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.7);
   border: none;
   padding: 12px;
   font-size: 18px;
   border-radius: 50%;
-  color: #aaa;
-  cursor: not-allowed;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.boto-carrusel:hover {
+  transform: translateY(-50%) scale(1.1); /* S'agrandas una mica al passar-hi el ratolí */
 }
 
 .prev { left: 15px; }
@@ -180,7 +200,7 @@ body {
   border-top: 2px dashed #f8bbd0;
 }
 
-/* Estils propis del widget del xatbot recopilats del codi base */
+/* Estils del xatbot del pas 3 de la web (sense canvis de disseny) */
 #chatbot-widget {
   position: fixed;
   bottom: 20px;
@@ -239,14 +259,21 @@ body {
   font-size: 14px;
 }
 
+/* El botó d'enviar missatge del xat també es fa gran */
 #chat-input button {
   padding: 10px;
   background-color: #ac2cd3;
   color: #ff99dd;
   border: none;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
+#chat-input button:hover {
+  transform: scale(1.15);
+}
+
+/* El botó rodó flotant també s'agranda al passar el ratolí */
 #chat-toggle {
   position: fixed;
   bottom: 20px;
@@ -260,4 +287,9 @@ body {
   font-size: 30px;
   cursor: pointer;
   z-index: 9998;
+  transition: transform 0.3s ease;
+}
+
+#chat-toggle:hover {
+  transform: scale(1.1);
 }
