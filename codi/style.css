@@ -21,7 +21,7 @@ body {
   animation: efecteAparicio 0.8s ease-out forwards;
 }
 
-/* Configuro els passos del fons: primer transparent i després opac amb pujada */
+/* Configuro los pasos del fondo: primer transparent i després opac amb pujada */
 @keyframes efecteAparicio {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -114,7 +114,7 @@ body {
   text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8);
 }
 
-/* Dissenyo el botó gran de color lila fosc de la benvinguda */
+/* Botó rectangular de color lila fosc que coincideix amb l'HTML */
 .boto-comencar-portada {
   background-color: #922b55;
   color: white;
@@ -153,14 +153,14 @@ body {
   width: 50%;
 }
 
-/* Estilitzo el títol de la introducció amb el lila fosc característic */
+/* Dono estil al títol de color lila fosc de la introducció */
 .columna-text h2 {
   font-size: 28px;
   color: #880e4f;
   margin-bottom: 15px;
 }
 
-/* Ajusto el text de l'explicació perquè quedi ben espaiat entre línies */
+/* Ajusto l'alçada de l'interlineat per llegir millor el text */
 .columna-text p {
   line-height: 1.5;
   font-size: 15px;
@@ -283,7 +283,7 @@ body {
   transform: scale(1.2);
 }
 
-/* Maqueto el desplegable intern bicolor de les frases de sota dels mòduls */
+/* Maqueto le desplegable intern bicolor de les frases de sota dels mòduls */
 .bloc-frases-intern {
   display: flex;
   margin-bottom: 40px;
