@@ -2,7 +2,7 @@
 <header class="portada">
   <p class="subtitol">GAUDEIX DE LA CUINA</p>
   <h1 class="titol-principal">Cuina delights</h1>
-  <a href="#contingut" class="boto-comencar">COMENÇA A CUINAR!</a>
+  <a href="#contingut" class="boto-comencar" id="btn-comencar">COMENÇA A CUINAR!</a>
 </header>
 
 <!-- Contingut de la secció principal -->
@@ -19,14 +19,12 @@
     <div class="tarjeta-rosa">
       <h3>Frases inspiradores</h3>
       <p>Si penses que cuinar no serveix de res o ja no tens ganes, llegeix aquestes frases a veure si la teva ment canvia!</p>
-      <!-- Afegit id per controlar el clic des de JavaScript -->
       <button class="boto-clica" id="btn-frases">Clica!</button>
     </div>
 
     <div class="tarjeta-rosa">
       <h3>Idees de receptes fàcils, ràpides i bones</h3>
       <p>Si no saps què cuinar, consulta aquest espai!</p>
-      <!-- Afegit id per controlar el clic des de JavaScript -->
       <button class="boto-clica" id="btn-receptes">Clica!</button>
     </div>
   </div>
@@ -35,7 +33,6 @@
   <section class="seccio-carrusel">
     <h3>FOTOS QUE VAN PASSANT</h3>
     <div class="carrusel-contenidor">
-      <!-- Les tres diapositives que es mouran soles -->
       <div class="carrusel-diapositives" id="carrusel-slides">
         <div class="slide bg-1"><span>📸 Cuina Creativa</span></div>
         <div class="slide bg-2"><span>🔪 Estris de Cuina</span></div>
@@ -64,9 +61,6 @@
  </div>
  <div id="chat-input">
    <input type="text" id="user-input" placeholder="Escriu una pregunta..." />
-   <button onclick="enviaMissatge()">📨</button>
- </div>
-</div>
-
+   <button onclick="enviaMissatge()" id="btn-enviar">📨</button>
  </div>
 </div>
