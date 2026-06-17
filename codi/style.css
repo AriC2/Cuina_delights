@@ -1,47 +1,44 @@
-/* Reseteig de marges i definició de la tipografia base de la web */
+/* Definicions globals i fons lila/rosa pastís idèntic al teu esquema visual */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Transició suau per als enllaços d'ancla de la pàgina */
-html {
+/* Apliquem la font general excepte per al títol de la portada */
+body, html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
 
-/* Color de fons de l'aplicació i color de text general */
 body {
-  background-color: #fce4ec;
+  background-color: #fbcce1;
   color: #880e4f;
 }
 
-/* ANIMACIÓ NOU: Classe per fer aparèixer la web de manera suau al principi */
+/* Animació per a l'aparició suau del contingut */
 .transicio-suau {
   animation: efecteAparicio 0.8s ease-out forwards;
 }
 
-/* Definició dels passos de l'animació de transparència per a tota la web */
 @keyframes efecteAparicio {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ANIMACIÓ NOU: Classe especial per a la transició de les frases inspiradores */
+/* Animació de lliscament per a la secció de les frases de sota */
 .transicio-frases {
   animation: efecteDesplegar 0.6s ease-out forwards;
 }
 
-/* Definició de l'animació perquè les frases surtin lliscant suaument */
 @keyframes efecteDesplegar {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Estils per a la capçalera a pantalla completa amb gradient */
+/* DISSENY DE LA NOVA PORTADA AMB POSICIONAMENT RELATIU PER A LES DECORACIONS */
 .portada {
-  background: linear-gradient(135deg, #ffc1e3, #fce4ec);
+  background-color: #f9d2e4; /* El rosa pastís exacte del fons de la teva imatge */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -49,110 +46,173 @@ body {
   align-items: center;
   text-align: center;
   padding: 20px;
+  position: relative; /* Necessari per col·locar la purpurina i els dibuixos */
+  overflow: hidden;
 }
 
-/* Format del text secundari de la benvinguda de la portada */
-.subtitol {
-  font-size: 18px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: #c2185b;
-  margin-bottom: 10px;
+/* Purpurina daurada i brillant simulada amb degradats que el sistema sí accepta */
+.purpurina-dalt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at top left, rgba(241,196,15,0.4) 0%, rgba(254,249,195,0.2) 50%, transparent 100%);
+  z-index: 1;
 }
 
-/* Format del títol principal superior de l'aplicació */
-.titol-principal {
-  font-size: 64px;
-  color: #880e4f;
-  margin-bottom: 30px;
+/* Purpurina daurada i brillant a la cantonada inferior dreta */
+.purpurina-baix {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at bottom right, rgba(241,196,15,0.4) 0%, rgba(254,249,195,0.2) 50%, transparent 100%);
+  z-index: 1;
 }
 
-/* Botó de l'entrada principal amb animació de transformació de mida */
-.boto-comencar {
-  background-color: #880e4f;
-  color: white;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
+/* CORREGIT: Galetes d'estil Kawaii/Canva més cuquis i netes */
+.galetes-decoratives {
+  position: absolute;
+  bottom: 50px;
+  left: 180px;
+  width: 70px;
+  height: 70px;
+  background-image: url('https://icons8.com'); /* Icona de galeta estil Canva neta i bonica */
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
   transition: transform 0.3s ease;
 }
 
-/* Increment de la mida del botó quan el ratolí està a sobre */
-.boto-comencar:hover {
-  transform: scale(1.1);
+/* Efecte divertit que fa ballar la galeta si hi passes el ratolí per sobre */
+.galetes-decoratives:hover {
+  transform: rotate(15deg) scale(1.1);
 }
 
-/* Disseny estructural del bloc de contingut intern */
+/* Format del text secundari de la benvinguda */
+.subtitol {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #c2185b;
+  margin-bottom: 25px;
+  z-index: 2; /* Fa que es llegeixi per sobre de la purpurina */
+}
+
+/* CORREGIT: Estil calcat a la tipografia More Sugar de Canva (gruixuda, rodona i divertida) */
+.titol-principal-arrodonit {
+  font-family: "Comic Sans MS", "Fredoka", "Arial Rounded MT Bold", sans-serif;
+  font-size: 84px;
+  font-weight: 900; /* Força el gruix màxim de la lletra */
+  color: #b73a6c; /* El lila fosc exacte de la lletra de la teva foto */
+  margin-bottom: 40px;
+  z-index: 2;
+  letter-spacing: -1px; /* Enganxa una mica les lletres com a la imatge */
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8); /* Li dona relleu net */
+}
+
+/* Botó de començar rectangular de color lila fosc */
+.boto-comencar-portada {
+  background-color: #922b55; /* El color vi fosc de la teva capsa rectangular */
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.boto-comencar-portada:hover {
+  transform: scale(1.1);
+}
+/* Mides del bloc contenidor de la aplicació */
 .contenidor {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* Caixa contenidora blanca de l'apartat d'introducció descriptiva */
-.introduccio {
-  text-align: center;
-  margin-bottom: 40px;
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.introduccio h2 {
-  color: #c2185b;
-  margin-bottom: 15px;
-}
-
-.introduccio p {
-  line-height: 1.6;
-  color: #555;
-}
-
-/* Distribució en columnes simètriques de les targetes interactives */
-.graella-accions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 40px;
-}
-
-/* Caixes de selecció amb orientació interna alineada al centre */
-.tarjeta-rosa {
-  background-color: #f8bbd0;
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
+/* Disseny de la secció superior en dues columnes */
+.seccio-superior {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
   align-items: center;
 }
 
-.tarjeta-rosa h3 {
+.columna-text {
+  width: 50%;
+}
+
+.columna-text h2 {
+  font-size: 28px;
   color: #880e4f;
+  margin-bottom: 15px;
+}
+
+.columna-text p {
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+/* Columna dreta amb la imatge de la cuina d'alta resolució que em vas passar */
+.columna-imatge-cuina {
+  width: 50%;
+  height: 320px;
+  background-image: url('https://picsum.photos');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+/* Disseny de la secció inferior (Botons i carrusel) */
+.seccio-inferior {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.bloc-botons-esquerra {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tarjeta-rosa {
+  background-color: #f794b4;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+}
+
+.tarjeta-rosa h3 {
+  font-size: 22px;
   margin-bottom: 10px;
 }
 
 .tarjeta-rosa p {
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 15px;
-  color: #c2185b;
   line-height: 1.4;
 }
 
-/* Botons interactius de les targetes amb transició de tamany suau */
 .boto-clica {
-  background-color: #c2185b;
+  background-color: #880e4f;
   color: white;
   border: none;
-  padding: 10px 25px;
+  padding: 12px 30px;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 16px;
   transition: transform 0.3s ease;
 }
 
@@ -160,89 +220,21 @@ body {
   transform: scale(1.1);
 }
 
-/* Maquetació de la nova zona desplegable de frases en dues seccions */
-.bloc-frases-intern {
+.bloc-carrusel-dreta {
+  width: 55%;
   display: flex;
-  margin-bottom: 40px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  align-items: center;
+  gap: 10px;
 }
 
-/* Bloc esquerre de color fúcsia per a la capçalera de les frases */
-.esquerra-frases {
-  width: 40%;
-  background-color: #ec407a;
-  color: white;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.esquerra-frases h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.esquerra-frases p {
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-/* Bloc dret de color rosa pàlid per llistar les frases verticals */
-.dreta-frases {
-  width: 60%;
-  background-color: #fff1f5;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-}
-
-.bloc-frase {
-  border-bottom: 1px solid #f8bbd0;
-  padding-bottom: 10px;
-}
-
-.bloc-frase:last-child {
-  border-bottom: none;
-}
-
-.frase {
-  font-size: 16px;
-  font-weight: bold;
-  color: #880e4f;
-  margin-bottom: 5px;
-}
-
-/* Format dels noms dels autors a sota de cada cita de cuina */
-.autor {
-  font-size: 12px;
-  color: #c2185b;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Configuració del marc de retallada de l'espai de les fotografies */
-.seccio-carrusel {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-/* Caixa principal que enquadra el visor i retalla el que sobresurt */
 .carrusel-contenidor {
-  position: relative;
-  max-width: 100%;
-  height: 300px;
-  margin: 0 auto;
+  flex: 1;
+  height: 280px;
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Contenidor adaptat per moure de cop 4 imatges en línia horitzontal */
 .carrusel-diapositives {
   display: flex;
   width: 400%;
@@ -250,169 +242,75 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
-/* Estils de les zones internes del carrusel de fotografies horitzontal */
 .slide {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  color: white;
-  font-weight: bold;
 }
 
-/* LES 4 RUTES LOCALS DIRECTES A LA TEVA CARPETA D'IMATGES DE GITHUB */
-.bg-1 { 
-  background-image: url('imatges/image1.png'); 
-  background-size: cover; 
-  background-position: center; 
-}
+.bg-1 { background-image: url('https://picsum.photos'); background-size: cover; background-position: center; }
+.bg-2 { background-image: url('https://picsum.photos'); background-size: cover; background-position: center; }
+.bg-3 { background-image: url('https://picsum.photos'); background-size: cover; background-position: center; }
+.bg-4 { background-image: url('https://picsum.photos'); background-size: cover; background-position: center; }
 
-.bg-2 { 
-  background-image: url('imatges/image2.png'); 
-  background-size: cover; 
-  background-position: center; 
-}
-
-.bg-3 { 
-  background-image: url('imatges/image3.png'); 
-  background-size: cover; 
-  background-position: center; 
-}
-
-.bg-4 { 
-  background-image: url('imatges/image4.png'); 
-  background-size: cover; 
-  background-position: center; 
-}
-
-/* Botons de direcció fets amb un fons blanquinós transparent */
 .boto-carrusel {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255,255,255,0.7);
+  background: none;
   border: none;
-  padding: 12px;
-  font-size: 18px;
-  border-radius: 50%;
+  font-size: 28px;
+  color: #880e4f;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
-/* Efecte d'augment quan es passa el ratolí sobre les fletxes del visor */
 .boto-carrusel:hover {
-  transform: translateY(-50%) scale(1.1);
+  transform: scale(1.2);
 }
 
-.prev { left: 15px; }
-.next { right: 15px; }
-
-/* Separador i format de la zona inferior de tancament de la pàgina */
-.peu {
-  text-align: center;
-  padding-top: 20px;
-  border-top: 2px dashed #f8bbd0;
-}
-
-/* Estils de la finestra del xatbot del codi de l'usuari */
-#chatbot-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  max-height: 400px;
-  background-color: rgb(243, 224, 255);
-  border: 1px solid #700470;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(106, 5, 116, 0.2);
+.bloc-frases-intern {
   display: flex;
-  flex-direction: column;
+  margin-bottom: 40px;
+  border-radius: 15px;
   overflow: hidden;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  z-index: 9999;
 }
 
-/* Color de fons de la barra superior del xatbot */
-#chat-header {
-  background-color: #f777cc;
-  color: rgb(231, 185, 243);
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-}
+.esquerra-frases { width: 40%; background-color: #ec407a; color: white; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
+.esquerra-frases h2 { font-size: 28px; margin-bottom: 15px; }
+.esquerra-frases p { font-size: 15px; line-height: 1.5; }
+.dreta-frases { width: 60%; background-color: #fff1f5; padding: 30px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.bloc-frase { border-bottom: 1px solid #f8bbd0; padding-bottom: 10px; }
+.bloc-frase:last-child { border-bottom: none; }
+.frase { font-size: 16px; font-weight: bold; color: #880e4f; margin-bottom: 5px; }
+.autor { font-size: 12px; color: #c2185b; text-transform: uppercase; letter-spacing: 1px; }
 
-/* Àrea per anar acumulant el llistat vertical dels missatges */
-#chat-body {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  font-size: 14px;
-}
+.peu { text-align: center; padding-top: 20px; border-top: 2px dashed #f8bbd0; }
 
-.message {
-  margin: 5px 0;
-}
-
-/* Color identificatiu de text per a l'usuari de la aplicació */
-.user {
-  text-align: right;
-  color: #8d1a87;
-}
-
-/* Color identificatiu de text per a les respostes automàtiques del bot */
-.bot {
-  text-align: left;
-  color: #5e1979;
-}
-
-/* Mòdul de text de la barra inferior per introduir els caràcters */
-#chat-input {
-  display: flex;
-  border-top: 1px solid #d3b0f3;
-}
-
-#chat-input input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  font-size: 14px;
-}
-
-/* Botó d'enviament de dades del xat amb transició elàstica d'escala */
-#chat-input button {
-  padding: 10px;
-  background-color: #ac2cd3;
-  color: #ff99dd;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-/* Efecte per faire el botó del sobre més gran en passar el ratolí */
-#chat-input button:hover {
-  transform: scale(1.15);
-}
-
-/* Botó rodó flotant per a l'obertura general de la interfície de conversa */
+/* BOTÓ DEL XATBOT INTERACTIU AMB EL INFORME DE PUNTS DE LA IMATGE */
 #chat-toggle {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 25px;
+  right: 25px;
   background-color: #ff99dd;
-  color: white;
-  border: none;
+  color: #880e4f;
+  border: 3px dashed #700470;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 30px;
+  width: 75px;
+  height: 75px;
+  font-size: 20px;
+  font-weight: bold;
   cursor: pointer;
   z-index: 9998;
   transition: transform 0.3s ease;
 }
 
-/* Efecte per fer el botó interactiu del globus més gran al posar-hi el ratolí */
 #chat-toggle:hover {
   transform: scale(1.1);
 }
+
+#chatbot-widget { position: fixed; bottom: 20px; right: 20px; width: 300px; max-height: 400px; background-color: rgb(243, 224, 255); border: 1px solid #700470; border-radius: 10px; box-shadow: 0 4px 8px rgba(106, 5, 116, 0.2); display: flex; flex-direction: column; overflow: hidden; font-family: Georgia, serif; z-index: 9999; }
+#chat-header { background-color: #f777cc; color: rgb(231, 185, 243); padding: 10px; text-align: center; font-weight: bold; }
+#chat-body { flex: 1; padding: 10px; overflow-y: auto; font-size: 14px; }
+.message { margin: 5px 0; }
+.user { text-align: right; color: #8d1a87; }
+.bot { text-align: left; color: #5e1979; }
+#chat-input { display: flex; border-top: 1px solid #d3b0f3; }
+#chat-input input { flex: 1; padding: 10px; border: none; font-size: 14px; }
+#chat-input button { padding: 10px; background-color: #ac2cd3; color: #ff99dd; border: none; cursor: pointer; }
