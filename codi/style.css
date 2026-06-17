@@ -1,44 +1,46 @@
-/* Definicions globals i fons lila/rosa pastís idèntic al teu esquema visual */
+/* Borro els marges que vénen de fàbrica a tots els elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Apliquem la font general excepte per al títol de la portada */
-body, html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Faig que el moviment vertical de la pantalla sigui molt suau */
+html {
   scroll-behavior: smooth;
 }
 
+/* Trio el color rosa clar per al fons general de la meva web */
 body {
   background-color: #fbcce1;
   color: #880e4f;
 }
 
-/* Animació per a l'aparició suau del contingut */
+/* Creo una animació perquè el contingut aparegui de manera fluida */
 .transicio-suau {
   animation: efecteAparicio 0.8s ease-out forwards;
 }
 
+/* Defineixo els passos de l'animació de transparència i pujada */
 @keyframes efecteAparicio {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animació de lliscament per a la secció de les frases de sota */
+/* Creo la classe amb l'animació per al desplegable de les frases */
 .transicio-frases {
   animation: efecteDesplegar 0.6s ease-out forwards;
 }
 
+/* Defineixo el lliscament suau que faran les frases en aparèixer */
 @keyframes efecteDesplegar {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* DISSENY DE LA NOVA PORTADA AMB POSICIONAMENT RELATIU PER A LES DECORACIONS */
+/* Configuro la pantalla gran de portada amb el fons rosa de la foto */
 .portada {
-  background-color: #f9d2e4; /* El rosa pastís exacte del fons de la teva imatge */
+  background-color: #f9d2e4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -46,11 +48,11 @@ body {
   align-items: center;
   text-align: center;
   padding: 20px;
-  position: relative; /* Necessari per col·locar la purpurina i els dibuixos */
+  position: relative;
   overflow: hidden;
 }
 
-/* Purpurina daurada i brillant simulada amb degradats que el sistema sí accepta */
+/* Dibuixo l'efecte de la purpurina groga superior esquerra a la portada */
 .purpurina-dalt {
   position: absolute;
   top: 0;
@@ -61,7 +63,7 @@ body {
   z-index: 1;
 }
 
-/* Purpurina daurada i brillant a la cantonada inferior dreta */
+/* Dibuixo l'efecte de la purpurina groga inferior dreta a la portada */
 .purpurina-baix {
   position: absolute;
   bottom: 0;
@@ -71,106 +73,82 @@ body {
   background: radial-gradient(circle at bottom right, rgba(241,196,15,0.4) 0%, rgba(254,249,195,0.2) 50%, transparent 100%);
   z-index: 1;
 }
-
-/* CORREGIT: Galetes d'estil Kawaii/Canva més cuquis i netes */
-.galetes-decoratives {
-  position: absolute;
-  bottom: 50px;
-  left: 180px;
-  width: 70px;
-  height: 70px;
-  background-image: url('https://icons8.com'); /* Icona de galeta estil Canva neta i bonica */
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 1;
-  transition: transform 0.3s ease;
+/* Borro els marges que vénen de fàbrica a tots els elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Efecte divertit que fa ballar la galeta si hi passes el ratolí per sobre */
-.galetes-decoratives:hover {
-  transform: rotate(15deg) scale(1.1);
+/* Faig que el moviment vertical de la pantalla sigui molt suau */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Format del text secundari de la benvinguda */
-.subtitol {
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: #c2185b;
-  margin-bottom: 25px;
-  z-index: 2; /* Fa que es llegeixi per sobre de la purpurina */
-}
-
-/* CORREGIT: Estil calcat a la tipografia More Sugar de Canva (gruixuda, rodona i divertida) */
-.titol-principal-arrodonit {
-  font-family: "Comic Sans MS", "Fredoka", "Arial Rounded MT Bold", sans-serif;
-  font-size: 84px;
-  font-weight: 900; /* Força el gruix màxim de la lletra */
-  color: #b73a6c; /* El lila fosc exacte de la lletra de la teva foto */
-  margin-bottom: 40px;
-  z-index: 2;
-  letter-spacing: -1px; /* Enganxa una mica les lletres com a la imatge */
-  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8); /* Li dona relleu net */
-}
-
-/* Botó de començar rectangular de color lila fosc */
-.boto-comencar-portada {
-  background-color: #922b55; /* El color vi fosc de la teva capsa rectangular */
-  color: white;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
-  z-index: 2;
-  transition: transform 0.3s ease;
-}
-
-.boto-comencar-portada:hover {
-  transform: scale(1.1);
-}
-/* Mides del bloc contenidor de la aplicació */
-.contenidor {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-/* Disseny de la secció superior en dues columnes */
-.seccio-superior {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 40px;
-  align-items: center;
-}
-
-.columna-text {
-  width: 50%;
-}
-
-.columna-text h2 {
-  font-size: 28px;
+/* Trio el color rosa clar per al fons general de la meva web */
+body {
+  background-color: #fbcce1;
   color: #880e4f;
-  margin-bottom: 15px;
 }
 
-.columna-text p {
-  line-height: 1.5;
-  font-size: 15px;
+/* Creo una animació perquè el contingut aparegui de manera fluida */
+.transicio-suau {
+  animation: efecteAparicio 0.8s ease-out forwards;
 }
 
-/* Columna dreta amb la imatge de la cuina d'alta resolució que em vas passar */
-.columna-imatge-cuina {
-  width: 50%;
-  height: 320px;
-  background-image: url('https://picsum.photos');
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
+/* Defineixo els passos de l'animació de transparència i pujada */
+@keyframes efecteAparicio {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Disseny de la secció inferior (Botons i carrusel) */
+/* Creo la classe amb l'animació per al desplegable de les frases */
+.transicio-frases {
+  animation: efecteDesplegar 0.6s ease-out forwards;
+}
+
+/* Defineixo el lliscament suau que faran les frases en aparèixer */
+@keyframes efecteDesplegar {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Configuro la pantalla gran de portada amb el fons rosa de la foto */
+.portada {
+  background-color: #f9d2e4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dibuixo l'efecte de la purpurina groga superior esquerra a la portada */
+.purpurina-dalt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at top left, rgba(241,196,15,0.4) 0%, rgba(254,249,195,0.2) 50%, transparent 100%);
+  z-index: 1;
+}
+
+/* Dibuixo l'efecte de la purpurina groga inferior dreta a la portada */
+.purpurina-baix {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at bottom right, rgba(241,196,15,0.4) 0%, rgba(254,249,195,0.2) 50%, transparent 100%);
+  z-index: 1;
+}
+/* Creo la secció de baix que uneix els botons i el carrusel de costat */
 .seccio-inferior {
   display: flex;
   gap: 30px;
@@ -178,6 +156,7 @@ body {
   align-items: center;
 }
 
+/* Organitzo la columna de l'esquerra per posar els botons un sobre l'altre */
 .bloc-botons-esquerra {
   width: 45%;
   display: flex;
@@ -185,6 +164,7 @@ body {
   gap: 20px;
 }
 
+/* Configuro les caixes dels botons amb el color rosa fosc del teu dibuix */
 .tarjeta-rosa {
   background-color: #f794b4;
   padding: 25px;
@@ -193,17 +173,20 @@ body {
   color: white;
 }
 
+/* Dono estil als títols interiors blancs de cada targeta de botó */
 .tarjeta-rosa h3 {
   font-size: 22px;
   margin-bottom: 10px;
 }
 
+/* Ajusto la mida dels textos informatius de sota dels botons */
 .tarjeta-rosa p {
   font-size: 13px;
   margin-bottom: 15px;
   line-height: 1.4;
 }
 
+/* Creo els botons de clica de color lila fosc i transició de tamany */
 .boto-clica {
   background-color: #880e4f;
   color: white;
@@ -216,10 +199,12 @@ body {
   transition: transform 0.3s ease;
 }
 
+/* Faig que els botons es facin més grans quan l'usuari hi posa el ratolí */
 .boto-clica:hover {
   transform: scale(1.1);
 }
 
+/* Defineixo la mida de la columna de la dreta on va col·locat el carrusel */
 .bloc-carrusel-dreta {
   width: 55%;
   display: flex;
@@ -227,6 +212,7 @@ body {
   gap: 10px;
 }
 
+/* Configuro el marc del carrusel perquè amagui el que sobresurt */
 .carrusel-contenidor {
   flex: 1;
   height: 280px;
@@ -235,6 +221,7 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Creo la tira horitzontal llarga del carrusel adaptada per a 4 imatges */
 .carrusel-diapositives {
   display: flex;
   width: 400%;
@@ -242,16 +229,19 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
+/* Dono la mida sencera del visor a cadascuna de les 4 diapositives */
 .slide {
   width: 100%;
   height: 100%;
 }
 
-.bg-1 { background-image: url('https://picsum.photos'); background-size: cover; background-position: center; }
-.bg-2 { background-image: url('https://picsum.photos'); background-size: cover; background-position: center; }
-.bg-3 { background-image: url('https://picsum.photos'); background-size: cover; background-position: center; }
-.bg-4 { background-image: url('https://picsum.photos'); background-size: cover; background-position: center; }
+/* Rutes locals cap a la teva carpeta d'imatges de les 4 fotos del visor */
+.bg-1 { background-image: url('imatges/image2.png'); background-size: cover; background-position: center; }
+.bg-2 { background-image: url('imatges/image3.png'); background-size: cover; background-position: center; }
+.bg-3 { background-image: url('imatges/image4.png'); background-size: cover; background-position: center; }
+.bg-4 { background-image: url('imatges/image5.png'); background-size: cover; background-position: center; }
 
+/* Elimino el fons i configuro el tamany de les fletxes del carrusel */
 .boto-carrusel {
   background: none;
   border: none;
@@ -261,10 +251,12 @@ body {
   transition: transform 0.2s ease;
 }
 
+/* Faig que les fletxes es facin grans quan l'usuari s'hi acosta */
 .boto-carrusel:hover {
   transform: scale(1.2);
 }
 
+/* Creo l'estructura modular interna per al desplegable de les frases */
 .bloc-frases-intern {
   display: flex;
   margin-bottom: 40px;
@@ -272,6 +264,7 @@ body {
   overflow: hidden;
 }
 
+/* Defineixo els estils estructurals dels elements interiors de les frases */
 .esquerra-frases { width: 40%; background-color: #ec407a; color: white; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
 .esquerra-frases h2 { font-size: 28px; margin-bottom: 15px; }
 .esquerra-frases p { font-size: 15px; line-height: 1.5; }
@@ -281,9 +274,10 @@ body {
 .frase { font-size: 16px; font-weight: bold; color: #880e4f; margin-bottom: 5px; }
 .autor { font-size: 12px; color: #c2185b; text-transform: uppercase; letter-spacing: 1px; }
 
+/* Dono estil amb guixots a la línia divisòria del peu final */
 .peu { text-align: center; padding-top: 20px; border-top: 2px dashed #f8bbd0; }
 
-/* BOTÓ DEL XATBOT INTERACTIU AMB EL INFORME DE PUNTS DE LA IMATGE */
+/* Dibuixo el cercle flotant rosa del xatbot amb línia de punts com el dibuix */
 #chat-toggle {
   position: fixed;
   bottom: 25px;
@@ -301,10 +295,12 @@ body {
   transition: transform 0.3s ease;
 }
 
+/* Incremento la mida del botó rodó del xat en posar-hi el ratolí */
 #chat-toggle:hover {
   transform: scale(1.1);
 }
 
+/* Copio exactament les caixes i configuracions de diàleg de la teva interfície */
 #chatbot-widget { position: fixed; bottom: 20px; right: 20px; width: 300px; max-height: 400px; background-color: rgb(243, 224, 255); border: 1px solid #700470; border-radius: 10px; box-shadow: 0 4px 8px rgba(106, 5, 116, 0.2); display: flex; flex-direction: column; overflow: hidden; font-family: Georgia, serif; z-index: 9999; }
 #chat-header { background-color: #f777cc; color: rgb(231, 185, 243); padding: 10px; text-align: center; font-weight: bold; }
 #chat-body { flex: 1; padding: 10px; overflow-y: auto; font-size: 14px; }
