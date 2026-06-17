@@ -1,14 +1,14 @@
-// Busco el botó de començar i li afegeixo un detector de clics
+// Busco el botó de començar i li afegeixo un detector de clics per obrir la web
 document.getElementById('btn-comencar').addEventListener('click', function () {
   // Quan es fa clic, faig que la pantalla de portada s'amagui de la vista
   document.getElementById('pantalla-portada').style.display = 'none';
-  // Després faig que aparegui tot el contingut principal de la web
+  // Després faig que aparegui tot el contingut principal de la web de cuina
   document.getElementById('contingut-web').style.display = 'block';
   // Finalment faig que el botó rodó per obrir el xat també es pugui veure
   document.getElementById('chat-toggle').style.display = 'block';
 });
 
-// Busco el botó de les frases i li afegeixo un detector de clics
+// Busco el botó de les frases i li afegeixo un detector de clics per desplegar-les
 document.getElementById('btn-frases').addEventListener('click', function () {
   // Agafo l'element de la secció de les frases per poder comprovar el seu estat
   const seccioFrases = document.getElementById('seccio-frases-desplegable');
@@ -29,8 +29,7 @@ document.getElementById('btn-receptes').addEventListener('click', function() {
   // Faig que s'obri la pàgina web de cuina en una pestanya nova al navegador
   window.open('https://cuina.cat', '_blank');
 });
-
-// REQUISIT NOU: CONTROL COMPLET DELS CLICS A TOTA LA PÀGINA WEB
+// Control complet dels clics a tota la pàgina web per obrir o tancar el xatbot
 document.addEventListener('click', function (esdeveniment) {
   // Agafo el quadre gran del xatbot per poder canviar la seva visibilitat
   const widget = document.getElementById('chatbot-widget');
@@ -72,7 +71,7 @@ function enviaMissatge() {
   const input = document.getElementById('user-input');
   // Adapto el text que ha escrit l'usuari treient els espais buits del final
   const missatge = input.value.trim();
-  // Si l'usuari no ha escrit absolutament res, aturo la funció aquí mateix
+  // Si l'usuari no ha escrit absolutament res, aturo la funció aquí mesh
   if (!missatge) return;
 
   // Crido la funció per dibuixar el missatge de l'usuari a la pantalla
@@ -95,11 +94,11 @@ function mostraMissatge(text, tipus) {
   const div = document.createElement('div');
   // Li assigno les classes de disseny per saber si és de l'usuari o del bot
   div.className = `message ${tipus}`;
-  // Introdueixo el text real que s'ha de leer dins d'aquest nou bloc div
+  // Introdueixo el text real que s'ha de llegir dins d'aquest nou bloc div
   div.textContent = text;
   // Afegeixo aquest globus de text a dins de l'historial visible del xat
   document.getElementById('chat-body').appendChild(div);
-  // Faig que el xat es mogui sol cap avall de tot per veure sempre l'últim missatge
+  // Faig que le xat es mogui sol cap avall de tot per veure sempre l'últim missatge
   document.getElementById('chat-body').scrollTop = document.getElementById('chat-body').scrollHeight;
 }
 
@@ -158,3 +157,4 @@ setInterval(seguentSlide, 3000);
 document.getElementById('btn-next').addEventListener('click', seguentSlide);
 // Busco la fletxa de l'esquerra del carrusel i li assigno la funció de retrocedir
 document.getElementById('btn-prev').addEventListener('click', anteriorSlide);
+
