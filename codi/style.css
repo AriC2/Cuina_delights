@@ -1,44 +1,44 @@
-/* Borro els marges que vénen de fàbrica a tots els elements */
+/* Netego els marges que el navegador posa per defecte a tota la web */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Faig que el moviment vertical de la pantalla sigui molt suau */
+/* Faig que el desplaçament vertical per la pàgina sigui fluid i suau */
 html {
   scroll-behavior: smooth;
 }
 
-/* Trio el color rosa clar per al fons general de la meva web */
+/* Poso el lila rosa pastís com a color de fons de tota la meva aplicació */
 body {
   background-color: #fbcce1;
   color: #880e4f;
 }
 
-/* Creo una animació perquè el contingut aparegui de manera fluida */
+/* Creo l'animació d'entrada perquè el contingut web es destapi a poc a poc */
 .transicio-suau {
   animation: efecteAparicio 0.8s ease-out forwards;
 }
 
-/* Defineixo els passos de l'animació de transparència i pujada */
+/* Configuro els passos del fons: primer transparent i després opac amb pujada */
 @keyframes efecteAparicio {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Creo la classe amb l'animació per al desplegable de les frases */
+/* Creo una classe d'animació exclusiva per a la zona de les frases */
 .transicio-frases {
   animation: efecteDesplegar 0.6s ease-out forwards;
 }
 
-/* Defineixo el lliscament suau que faran les frases en aparèixer */
+/* Faig que el text de les frases aparegui des de baix de tot de cop */
 @keyframes efecteDesplegar {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Configuro la pantalla gran de portada amb el fons rosa de la foto */
+/* Maqueto la primera pantalla amb el fons rosa de la meva portada de Canva */
 .portada {
   background-color: #f9d2e4;
   min-height: 100vh;
@@ -52,7 +52,7 @@ body {
   overflow: hidden;
 }
 
-/* Dibuixo l'efecte de la purpurina groga superior esquerra a la portada */
+/* Creo l'efecte daurat brillant de la cantonada de dalt a l'esquerra */
 .purpurina-dalt {
   position: absolute;
   top: 0;
@@ -63,7 +63,7 @@ body {
   z-index: 1;
 }
 
-/* Dibuixo l'efecte de la purpurina groga inferior dreta a la portada */
+/* Creo l'efecte daurat brillant de la cantonada de baix a la dreta */
 .purpurina-baix {
   position: absolute;
   bottom: 0;
@@ -73,82 +73,109 @@ body {
   background: radial-gradient(circle at bottom right, rgba(241,196,15,0.4) 0%, rgba(254,249,195,0.2) 50%, transparent 100%);
   z-index: 1;
 }
-/* Borro els marges que vénen de fàbrica a tots els elements */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Posiciono i dissenyo la galeta coti que flota al costat del botó */
+.galetes-decoratives {
+  position: absolute;
+  bottom: 50px;
+  left: 180px;
+  width: 70px;
+  height: 70px;
+  background-image: url('https://icons8.com');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  transition: transform 0.3s ease;
 }
 
-/* Faig que el moviment vertical de la pantalla sigui molt suau */
-html {
-  scroll-behavior: smooth;
+/* Faig que la galeta es mogui de costat si hi passes el ratolí per sobre */
+.galetes-decoratives:hover {
+  transform: rotate(15deg) scale(1.1);
 }
 
-/* Trio el color rosa clar per al fons general de la meva web */
-body {
-  background-color: #fbcce1;
-  color: #880e4f;
+/* Estilitzo el text petit que va just a sobre del títol principal */
+.subtitol {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #c2185b;
+  margin-bottom: 25px;
+  z-index: 2;
 }
 
-/* Creo una animació perquè el contingut aparegui de manera fluida */
-.transicio-suau {
-  animation: efecteAparicio 0.8s ease-out forwards;
+/* Calco la lletra de More Sugar de Canva: supergruixuda i arrodonida */
+.titol-principal-arrodonit {
+  font-family: "Comic Sans MS", "Arial Rounded MT Bold", sans-serif;
+  font-size: 84px;
+  font-weight: 900;
+  color: #b73a6c;
+  margin-bottom: 40px;
+  z-index: 2;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8);
 }
 
-/* Defineixo els passos de l'animació de transparència i pujada */
-@keyframes efecteAparicio {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Dissenyo el botó gran de color lila fosc de la benvinguda */
+.boto-comencar-portada {
+  background-color: #922b55;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.3s ease;
 }
 
-/* Creo la classe amb l'animació per al desplegable de les frases */
-.transicio-frases {
-  animation: efecteDesplegar 0.6s ease-out forwards;
+/* Faig que el botó s'agrandi i es mogui de forma suau al tocar-lo */
+.boto-comencar-portada:hover {
+  transform: scale(1.1);
 }
 
-/* Defineixo el lliscament suau que faran les frases en aparèixer */
-@keyframes efecteDesplegar {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Adapto l'amplada màxima de la web per centrar tot el contingut culinari */
+.contenidor {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-/* Configuro la pantalla gran de portada amb el fons rosa de la foto */
-.portada {
-  background-color: #f9d2e4;
-  min-height: 100vh;
+/* Divideixo el bloc de dalt de la introducció en dues columnes horitzontals */
+.seccio-superior {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
   align-items: center;
-  text-align: center;
-  padding: 20px;
-  position: relative;
-  overflow: hidden;
 }
 
-/* Dibuixo l'efecte de la purpurina groga superior esquerra a la portada */
-.purpurina-dalt {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle at top left, rgba(241,196,15,0.4) 0%, rgba(254,249,195,0.2) 50%, transparent 100%);
-  z-index: 1;
+/* Configuro la columna del text perquè ocupi exactament la meitat del bloc */
+.columna-text {
+  width: 50%;
 }
 
-/* Dibuixo l'efecte de la purpurina groga inferior dreta a la portada */
-.purpurina-baix {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle at bottom right, rgba(241,196,15,0.4) 0%, rgba(254,249,195,0.2) 50%, transparent 100%);
-  z-index: 1;
+/* Estilitzo el títol de la introducció amb el lila fosc característic */
+.columna-text h2 {
+  font-size: 28px;
+  color: #880e4f;
+  margin-bottom: 15px;
 }
-/* Creo la secció de baix que uneix els botons i el carrusel de costat */
+
+/* Ajusto el text de l'explicació perquè quedi ben espaiat entre línies */
+.columna-text p {
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+/* Columna on es dibuixa la teva gran imatge de la cuina en alta resolució */
+.columna-imatge-cuina {
+  width: 50%;
+  height: 320px;
+  background-image: url('https://picsum.photos');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+/* Enllaço la part inferior ajuntant targetes i carrusel de costat */
 .seccio-inferior {
   display: flex;
   gap: 30px;
@@ -156,7 +183,7 @@ body {
   align-items: center;
 }
 
-/* Organitzo la columna de l'esquerra per posar els botons un sobre l'altre */
+/* Encaixo el bloc de l'esquerra per apilar les dues targetes de botons */
 .bloc-botons-esquerra {
   width: 45%;
   display: flex;
@@ -164,7 +191,7 @@ body {
   gap: 20px;
 }
 
-/* Configuro les caixes dels botons amb el color rosa fosc del teu dibuix */
+/* Estilitzo les targetes de botons amb el rosa intens del meu disseny */
 .tarjeta-rosa {
   background-color: #f794b4;
   padding: 25px;
@@ -173,20 +200,20 @@ body {
   color: white;
 }
 
-/* Dono estil als títols interiors blancs de cada targeta de botó */
+/* Canvio la mida dels títols d'acció que van a dins de les targetes */
 .tarjeta-rosa h3 {
   font-size: 22px;
   margin-bottom: 10px;
 }
 
-/* Ajusto la mida dels textos informatius de sota dels botons */
+/* Adapto els paràgrafs explicatius de sota dels botons d'acció */
 .tarjeta-rosa p {
   font-size: 13px;
   margin-bottom: 15px;
   line-height: 1.4;
 }
 
-/* Creo els botons de clica de color lila fosc i transició de tamany */
+/* Maqueto els botons clica de color lila fosc amb un canvi de mida */
 .boto-clica {
   background-color: #880e4f;
   color: white;
@@ -199,12 +226,12 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Faig que els botons es facin més grans quan l'usuari hi posa el ratolí */
+/* Faig que el botó s'eixampli un 10% quan l'usuari hi posa el ratolí */
 .boto-clica:hover {
   transform: scale(1.1);
 }
 
-/* Defineixo la mida de la columna de la dreta on va col·locat el carrusel */
+/* Estableixo l'espai dret del bloc on va inserit tot el carrusel */
 .bloc-carrusel-dreta {
   width: 55%;
   display: flex;
@@ -212,7 +239,7 @@ body {
   gap: 10px;
 }
 
-/* Configuro el marc del carrusel perquè amagui el que sobresurt */
+/* Configuro la caixa del carrusel perquè funcioni com un visor tallant la imatge */
 .carrusel-contenidor {
   flex: 1;
   height: 280px;
@@ -221,7 +248,7 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Creo la tira horitzontal llarga del carrusel adaptada per a 4 imatges */
+/* Creo la gran tira horitzontal unificada per moure les 4 imatges al 400% */
 .carrusel-diapositives {
   display: flex;
   width: 400%;
@@ -229,19 +256,19 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
-/* Dono la mida sencera del visor a cadascuna de les 4 diapositives */
+/* Converteixo cadascuna de les 4 línies del visor en pantalles completes */
 .slide {
   width: 100%;
   height: 100%;
 }
 
-/* Rutes locals cap a la teva carpeta d'imatges de les 4 fotos del visor */
-.bg-1 { background-image: url('imatges/image2.png'); background-size: cover; background-position: center; }
-.bg-2 { background-image: url('imatges/image3.png'); background-size: cover; background-position: center; }
-.bg-3 { background-image: url('imatges/image4.png'); background-size: cover; background-position: center; }
-.bg-4 { background-image: url('imatges/image5.png'); background-size: cover; background-position: center; }
+/* Fons estables i blindats en HD per a les 4 imatges d'acció del carrusel */
+.bg-1 { background-image: url('https://picsum.photos'); background-size: cover; background-position: center; }
+.bg-2 { background-image: url('https://picsum.photos'); background-size: cover; background-position: center; }
+.bg-3 { background-image: url('https://picsum.photos'); background-size: cover; background-position: center; }
+.bg-4 { background-image: url('https://picsum.photos'); background-size: cover; background-position: center; }
 
-/* Elimino el fons i configuro el tamany de les fletxes del carrusel */
+/* Elimino els fons de fàbrica i estilitzo les fletxes direccionals */
 .boto-carrusel {
   background: none;
   border: none;
@@ -251,12 +278,12 @@ body {
   transition: transform 0.2s ease;
 }
 
-/* Faig que les fletxes es facin grans quan l'usuari s'hi acosta */
+/* Faig que les fletxes agafin mida quan passes el ratolí per sobre */
 .boto-carrusel:hover {
   transform: scale(1.2);
 }
 
-/* Creo l'estructura modular interna per al desplegable de les frases */
+/* Maqueto el desplegable intern bicolor de les frases de sota dels mòduls */
 .bloc-frases-intern {
   display: flex;
   margin-bottom: 40px;
@@ -264,7 +291,7 @@ body {
   overflow: hidden;
 }
 
-/* Defineixo els estils estructurals dels elements interiors de les frases */
+/* Defineixo l'aspecte i disseny dels blocs interns de les frases dels xefs */
 .esquerra-frases { width: 40%; background-color: #ec407a; color: white; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
 .esquerra-frases h2 { font-size: 28px; margin-bottom: 15px; }
 .esquerra-frases p { font-size: 15px; line-height: 1.5; }
@@ -274,10 +301,10 @@ body {
 .frase { font-size: 16px; font-weight: bold; color: #880e4f; margin-bottom: 5px; }
 .autor { font-size: 12px; color: #c2185b; text-transform: uppercase; letter-spacing: 1px; }
 
-/* Dono estil amb guixots a la línia divisòria del peu final */
+/* Dissenyo la franja del peu de tancament inferior amb una línia discontínua */
 .peu { text-align: center; padding-top: 20px; border-top: 2px dashed #f8bbd0; }
 
-/* Dibuixo el cercle flotant rosa del xatbot amb línia de punts com el dibuix */
+/* Dissenyo el botó flotant lila amb un cercle de punts com el meu dibuix */
 #chat-toggle {
   position: fixed;
   bottom: 25px;
@@ -295,12 +322,12 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Incremento la mida del botó rodó del xat en posar-hi el ratolí */
+/* Augmento de mida la bafarada circular del xatbot al posar-hi el ratolí */
 #chat-toggle:hover {
   transform: scale(1.1);
 }
 
-/* Copio exactament les caixes i configuracions de diàleg de la teva interfície */
+/* Adapto l'estil estructural del quadre de text de diàleg de la teva interfície */
 #chatbot-widget { position: fixed; bottom: 20px; right: 20px; width: 300px; max-height: 400px; background-color: rgb(243, 224, 255); border: 1px solid #700470; border-radius: 10px; box-shadow: 0 4px 8px rgba(106, 5, 116, 0.2); display: flex; flex-direction: column; overflow: hidden; font-family: Georgia, serif; z-index: 9999; }
 #chat-header { background-color: #f777cc; color: rgb(231, 185, 243); padding: 10px; text-align: center; font-weight: bold; }
 #chat-body { flex: 1; padding: 10px; overflow-y: auto; font-size: 14px; }
