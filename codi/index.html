@@ -1,93 +1,45 @@
-<!-- Pantalla de benvinguda de la aplicació amb les purpurines grogues i les galetes -->
-<header class="portada" id="pantalla-portada">
-  <!-- Purpurina daurada a la cantonada superior esquerra -->
-  <div class="purpurina-dalt"></div>
-  <!-- Purpurina daurada a la cantonada inferior dreta -->
-  <div class="purpurina-baix"></div>
-  
-  <!-- Dibuix de les galetes amb xocolata a baix a l'esquerra -->
-  <div class="galetes-decoratives"></div>
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <!-- Defineixo la configuració de caràcters per als accents en català -->
+  <meta charset="UTF-8">
+  <!-- Adapto la mida de la pantalla per a mòbils i ordinadors -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Títol oficial de la meva pàgina web que es veu a la pestanya -->
+  <title>Cuina delights</title>
+  <!-- CORREGIT: Enllaçat del CSS amb el punt i la barra per evitar errors a GitHub Pages -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
 
-  <!-- Contingut central amb els títols i el botó principal -->
-  <p class="subtitol">GAUDEIX DE LA CUINA</p>
-  <h1 class="titol-principal-arrodonit">Cuina delights</h1>
-  <button class="boto-comencar-portada" id="btn-comencar">COMENÇA A CUINAR!</button>
-</header>
+  <!-- Pantalla de benvinguda de la aplicació amb les purpurines grogues i les galetes -->
+  <header class="portada" id="pantalla-portada">
+    <!-- Caixa per dibuixar la purpurina daurada superior esquerra -->
+    <div class="purpurina-dalt"></div>
+    <!-- Caixa per dibuixar la purpurina daurada inferior dreta -->
+    <div class="purpurina-baix"></div>
+    
+    <!-- Caixa per col·locar el dibuixos de les galetes amb xocolata a baix -->
+    <div class="galetes-decoratives"></div>
 
-<!-- Contingut de la web amagat inicialment per fer l'efecte d'aparició -->
-<main id="contingut-web" class="contenidor transicio-suau" style="display: none;">
-  
-  <!-- Secció superior dividida en dues columnes amb el text i la foto de la cuina -->
-  <section class="seccio-superior">
-    <div class="columna-text">
-      <h2>Per què hauries de començar a cuinar?</h2>
-      <p>La cuina és un art que combina la creativitat i la passió. Explorar noves receptes i tècniques culinàries no només enriqueix els nostres paladars, si no que també crea moments memorables amb els nostres éssers estimats. Des de la preparació de menjars simples fins a l'elaboració d'exquisideses, cada pas a la cuina és una oportunitat per aprendre i gaudir. Amb inspiració i una mica de pràctica, podràs convertir-te en el xef dels teus somnis!</p>
-    </div>
-    <div class="columna-imatge-cuina"></div>
-  </section>
+    <!-- Text superior secundari de la benvinguda de la portada -->
+    <p class="subtitol">GAUDEIX DE LA CUINA</p>
+    <!-- Títol principal arrodonit que imita la font More Sugar del Canva -->
+    <h1 class="titol-principal-arrodonit">Cuina delights</h1>
+    <!-- Botó rectangular de color vi fosc per començar l'animació -->
+    <button class="boto-comencar-portada" id="btn-comencar">COMENÇA A CUINAR!</button>
+  </header>
 
-  <!-- Secció inferior amb les dues targetes de botons i el carrusel d'imatges -->
-  <section class="seccio-inferior">
-    <div class="bloc-botons-esquerra">
-      <div class="tarjeta-rosa">
-        <h3>Frases inspiradores</h3>
-        <p>Si no tens inspiració, consulta aquest espai!</p>
-        <button class="boto-clica" id="btn-frases">Clica!</button>
+  <!-- Contingut de la web amagat inicialment per fer l'efecte d'aparició -->
+  <main id="contingut-web" class="contenidor transicio-suau" style="display: none;">
+    
+    <!-- Secció superior dividida en dues columnes amb el text i la foto de la cuina -->
+    <section class="seccio-superior">
+      <!-- Columna esquerra per col·locar el text de la introducció -->
+      <div class="columna-text">
+        <h2>Per què hauries de començar a cuinar?</h2>
+        <p>La cuina és un art que combina la creativitat i la passió. Explorar noves receptes i tècniques culinàries no només enriqueix els nostres paladars, si no que també crea moments memorables amb els nostres éssers estimats. Des de la preparació de menjars simples fins a l'elaboració d'exquisideses, cada step a la cuina és una oportunitat per aprendre i gaudir. Amb inspiració i una mica de pràctica, podràs convertir-te en el xef dels teus somnis!</p>
       </div>
-
-      <div class="tarjeta-rosa">
-        <h3>Idees de receptes fàcils, ràpides i bones</h3>
-        <p>Si no saps què cuinar, consulta aquest espai!</p>
-        <button class="boto-clica" id="btn-receptes">Clica!</button>
-      </div>
-    </div>
-
-    <div class="bloc-carrusel-dreta">
-      <button class="boto-carrusel prev" id="btn-prev">❮</button>
-      <div class="carrusel-contenidor">
-        <div class="carrusel-diapositives" id="carrusel-slides">
-          <div class="slide bg-1"></div>
-          <div class="slide bg-2"></div>
-          <div class="slide bg-3"></div>
-          <div class="slide bg-4"></div>
-        </div>
-      </div>
-      <button class="boto-carrusel next" id="btn-next">❯</button>
-    </div>
-  </section>
-
-  <!-- Secció interna que es desplega per mostrar les frases dels xefs -->
-  <section id="seccio-frases-desplegable" class="bloc-frases-intern transicio-frases" style="display: none;">
-    <div class="esquerra-frases">
-      <h2>Frases inspiradores</h2>
-      <p>Si penses que cuinar no serveix de res o ja no tens ganes, llegeix aquestes frases a veure si la teva ment canvia!</p>
-    </div>
-    <div class="dreta-frases">
-      <div class="bloc-frase"><p class="frase">"Una recepta no té ànima. És el cuiner qui ha de donar ànima a la recepta."</p><p class="autor">Thomas Keller</p></div>
-      <div class="bloc-frase"><p class="frase">"No es tracta només de cuinar, es tracta de donar felicitat."</p><p class="autor">Alain Ducasse</p></div>
-      <div class="bloc-frase"><p class="frase">"No és una bona cuina si no està feta d'amistat per a la persona a cui està destinada."</p><p class="autor">Paul Bocuse</p></div>
-      <div class="bloc-frase"><p class="frase">"La cuina és un llenguatge universal que ens connecta a tothom."</p><p class="autor">José Andrés</p></div>
-    </div>
-  </section>
-
-  <!-- Tancament inferior de la pàgina web -->
-  <footer class="peu">
-    <h2>No deixis de cuinar!</h2>
-    <p>Consulta aquesta web cada cop que ho necessitis!</p>
-  </footer>
-</main>
-
-<!-- Botó rodó per activar el xatbot de la aplicació -->
-<button id="chat-toggle" class="transicio-suau" style="display: none;">💬</button>
-
-<!-- Estructura interior del xatbot del Cookbot -->
-<div id="chatbot-widget" style="display:none;">
-  <div id="chat-header">Cookbot</div>
-  <div id="chat-body">
-    <div class="message bot">Hola! Sóc en Cookbot, sé molt de cuina i puc resoldre els teus dubtes!</div>
-  </div>
-  <div id="chat-input">
-    <input type="text" id="user-input" placeholder="Escriu una pregunta..." />
-    <button onclick="enviaMissatge()" id="btn-enviar">📨</button>
-  </div>
-</div>
+      <!-- Columna dreta buida que agafarà la foto de la cuina des del CSS -->
+      <div class="columna-imatge-cuina"></div>
+    </section>
