@@ -37,31 +37,48 @@ body {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 /* Maqueto la primera pantalla amb el fons rosa de la meva portada de Canva */
 .portada {
+  /* Posa el color rosa clar de fons que vas triar a Canva */
   background-color: #f9d2e4;
-  min-height: 100vh;
+  /* Força que la portada ocupi, com a mínim, tota la pantalla de l'usuari */
+  min-height: 100vh; 
+  /* Activa la caixa flexible per poder alinear fàcilment tot el contingut de dins */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  position: relative;
+  /* Organitza els elements un a sota de l'altre, en vertical, com una columna */
+  flex-direction: column;  
+  /* Centra els elements verticalment dins d'aquesta gran pantalla */
+  justify-content: center;  
+  /* Centra els elements horitzontalment d'esquerra a dreta */
+  align-items: center;  
+  /* Assegura que tots els textos de dins quedin ben centrats */
+  text-align: center;  
+  /* Deixa un espai de seguretat als costats per no tocar les vores de la pantalla */
+  padding: 20px;  
+  /* Crea un punt de referència per si vols col·locar elements flotants a sobre */
+  position: relative;  
+  /* Amaga qualsevol cosa que sobresurti d'aquesta secció per evitar barres de desplaçament */
   overflow: hidden;
 }
 
 /* Dibuixo l'efecte de la purpurina groga superior esquerra a la portada */
 .purpurina-dalt {
+  /* Fa que el bloc suri lliurement per col·locar-lo exactament on vulguis */
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle at top left, rgba(241,196,15,0.4) 0%, rgba(254,249,195,0.2) 50%, transparent 100%);
+  /* L'enganxa completament a la vora superior de la portada */
+  top: 0;  
+  /* L'enganxa completament a la vora esquerra de la portada */
+  left: 0;  
+  /* Defineix l'amplada de la taca de purpurina */
+  width: 300px;  
+  /* Defineix l'alçada de la taca de purpurina */
+  height: 300px;  
+  /* Crea un degradat circular que neix a la cantonada i es va descolorint cap enfora */
+  background: radial-gradient(circle at top left, rgba(241,196,15,0.4) 0%, rgba(254,249,195,0.2) 50%, transparent 100%);  
+  /* El posa en una capa per sobre del fons, però per sota dels textos importants */
   z-index: 1;
 }
+
 
 /* Dibuixo l'efecte de la purpurina groga inferior dreta a la portada */
 .purpurina-baix {
@@ -73,60 +90,67 @@ body {
   background: radial-gradient(circle at bottom right, rgba(241,196,15,0.4) 0%, rgba(254,249,195,0.2) 50%, transparent 100%);
   z-index: 1;
 }
-/* Posiciono i dissenyo la galeta coti que flota al costat del botó */
-.galetes-decoratives {
-  position: absolute;
-  bottom: 50px;
-  left: 180px;
-  width: 70px;
-  height: 70px;
-  background-image: url('https://icons8.com');
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 1;
-  transition: transform 0.3s ease;
-}
-
-/* Faig que la galeta es mogui una mica si hi passes el ratolí per sobre */
-.galetes-decoratives:hover {
-  transform: rotate(15deg) scale(1.1);
-}
 
 /* Dono estil i espai al subtitol de dalt de la benvinguda */
 .subtitol {
+  /* Defineix la mida de la lletra del subtítol */
   font-size: 16px;
+  /* Fa que el text surti en negreta */
   font-weight: bold;
+  /* Separa una mica les lletres entre si per estilisme */
   letter-spacing: 2px;
+  /* Posa un color rosa fosc intens per contrastar amb el fons */
   color: #c2185b;
+  /* Deixa un espai per sota abans de la següent etiqueta */
   margin-bottom: 25px;
+  /* El posa a la capa 2 per assegurar que es vegi per sobre de la purpurina */
   z-index: 2;
 }
-
 /* Calco la lletra de More Sugar de Canva: supergruixuda i arrodonida */
 .titol-principal-arrodonit {
+  /* Busca tipografies arrodonides que vinguin instal·lades per defecte */
   font-family: "Comic Sans MS", "Arial Rounded MT Bold", sans-serif;
+  /* Fa la lletra del títol molt gran per cridar l'atenció */
   font-size: 84px;
+  /* El gruix màxim per imitar l'estil gruixut de Canva */
   font-weight: 900;
+  /* Un to de rosa fúcsia potent per al text del títol */
   color: #b73a6c;
+  /* Espai de seguretat a sota per separar-lo de la resta d'elements */
   margin-bottom: 40px;
+  /* Es manté a la mateixa capa superior que el subtítol */
   z-index: 2;
+  /* Junta una mica les lletres per fer el títol més compacte */
   letter-spacing: -1px;
+  /* Crea una ombra blanca neta per darrere que fa un efecte de relleu */
   text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8);
 }
 
+
 /* Botó rectangular de color lila fosc que coincideix exactament amb l'HTML */
 .boto-comencar-portada {
+  /* Posa el color lila fosc de fons per al botó */
   background-color: #922b55;
+  /* Fa que el text de dins del botó sigui blanc */
   color: white;
+  /* Defineix l'espai interior: 14 píxels a dalt/a sota i 28 als costats */
   padding: 14px 28px;
+  /* Treu la vora grisa que els botons porten per defecte */
   border: none;
+  /* Arrodoneix una mica les cantonades del botó */
   border-radius: 4px;
+  /* Fa que el text de dins es vegi en negreta */
   font-weight: bold;
+  /* Defineix la mida de la lletra del botó */
   font-size: 14px;
+  /* Canvia el punter del ratolí per una mà quan et passes per sobre */
   cursor: pointer;
+  /* El manté a la capa superior per sobre dels elements decoratius */
   z-index: 2;
+  /* Fa que qualsevol moviment o canvi visual es vegi suau i fluid */
   transition: transform 0.3s ease;
 }
+
 
 /* Faig que el botó de començar s'agrandi una mica en passar el ratolí */
 .boto-comencar-portada:hover {
@@ -165,17 +189,24 @@ body {
   line-height: 1.6;
   font-size: 15px;
 }
-
-/* CORREGIT: Foto de la cuina maca adaptada per contenir-se sencera sense cap tall */
+/* Foto de la cuina maca adaptada per contenir-se sencera sense cap tall */
 .columna-imatge-cuina {
+  /* Fa que aquest bloc ocupi exactament la meitat de l'amplada de la pantalla */
   width: 50%;
+  /* Fixa l'alçada del contenidor de la foto en 350 píxels */
   height: 350px;
+  /* Carrega la imatge des de la teva carpeta local del projecte */
   background-image: url('imatges/image1.png');
-  background-size: contain; /* Evita que la foto es retalli o s'aixafi de mala manera */
+  /* Evita que la foto es retalli o s'aixafi de mala manera */
+  background-size: contain;
+  /* Impedeix que la imatge es dupliqui si sobra espai al voltant */
   background-repeat: no-repeat;
+  /* Centra la fotografia horitzontalment i vertical dins del seu espai */
   background-position: center;
+  /* Arrodoneix una mica les quatre cantonades de la foto per fer-la més suau */
   border-radius: 10px;
 }
+
 /* Torno a enllaçar els mòduls de baix en format horitzontal de dues columnes */
 .seccio-inferior {
   display: flex;
@@ -216,16 +247,26 @@ body {
 
 /* Maqueto els botons clica de color lila fosc i transició de tamany */
 .boto-clica {
+  /* Posa el to lila fosc intens com a color de fons del botó */
   background-color: #880e4f;
+  /* Fa que el text de dins del botó sigui completament blanc */
   color: white;
+  /* Treu la vora per defecte per deixar el disseny net */
   border: none;
+  /* Defineix l'espai interior: 12 píxels a dalt/a sota i 30 als costats */
   padding: 12px 30px;
+  /* Arrodoneix les cantonades del botó amb un radi de 5 píxels */
   border-radius: 5px;
+  /* Transforma el cursor en una mà en passar-hi el ratolí per sobre */
   cursor: pointer;
+  /* Aplica un estil de lletra en negreta al text del botó */
   font-weight: bold;
+  /* Fixa la mida de la lletra en 16 píxels */
   font-size: 16px;
+  /* Suavitza el canvi de mida perquè l'animació no sigui brusca */
   transition: transform 0.3s ease;
 }
+
 
 /* Incremento la mida d'acció un 10% en passar el ratolí */
 .boto-clica:hover {
@@ -240,7 +281,7 @@ body {
   gap: 10px;
 }
 
-/* CORREGIT: Marc del carrusel dimensionat per encabir les fotos i evitar talls */
+/* Marc del carrusel dimensionat per encabir les fotos i evitar talls */
 .carrusel-contenidor {
   flex: 1;
   height: 350px; /* Incrementat l'alçada perquè hi entrin les imatges senceres */
@@ -266,64 +307,171 @@ body {
   background-position: center;
 }
 
-/* CORREGIT: Propietat background-size contain a les 4 fotos perquè es vegin senceres de dalt a baix */
+/* Propietat background-size contain a les 4 fotos perquè es vegin senceres de dalt a baix */
 .bg-1 { background-image: url('imatges/image2.png'); background-size: contain; }
 .bg-2 { background-image: url('imatges/image3.png'); background-size: contain; }
 .bg-3 { background-image: url('imatges/image4.png'); background-size: contain; }
 .bg-4 { background-image: url('imatges/image5.png'); background-size: contain; }
 
-/* Estilitzo les fletxes direccionals grans a banda i banda del carrusel */
+/* Fais més maques les fletxes de les línies del carrusel per moure les fotos */
 .boto-carrusel {
+  /* Treu el fons gris per defecte perquè la fletxa suri neta */
   background: none;
+  /* Elimina la línia del contorn per deixar el disseny net */
   border: none;
+  /* Fa que el símbol de la fletxa es vegi ben gran i clar */
   font-size: 28px;
+  /* Posa el mateix color lila fosc que tenen els altres botons */
   color: #880e4f;
+  /* Transforma el punter en una mà quan et poses a sobre per clicar */
   cursor: pointer;
+  /* Fa que qualsevol moviment es vegi fluid i gens brusc */
   transition: transform 0.2s ease;
 }
+
 
 /* Incremento la mida de les fletxes en passar el ratolí */
 .boto-carrusel:hover {
   transform: scale(1.2);
 }
-
-/* Creo l'estructura modular interna per al desplegable de les frases */
+/* Organitzo la capsa de dins del desplegable on es veuran les frases */
 .bloc-frases-intern {
+  /* Activa el mode flex per posar la introducció i les frases costat a costat */
   display: flex;
+  /* Deixa un espai de seguretat a sota abans de passar al següent element */
   margin-bottom: 40px;
+  /* Arrodoneix les cantonades de tot el bloc sencer */
   border-radius: 15px;
+  /* Retalla el contingut de dins perquè no sobresurti de les cantonades arrodonides */
   overflow: hidden;
 }
 
-.esquerra-frases { width: 40%; background-color: #ec407a; color: white; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
-.esquerra-frases h2 { font-size: 28px; margin-bottom: 15px; }
-.esquerra-frases p { font-size: 15px; line-height: 1.5; }
-.dreta-frases { width: 60%; background-color: #fff1f5; padding: 30px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
-.bloc-frase { border-bottom: 1px solid #f8bbd0; padding-bottom: 10px; }
-.bloc-frase:last-child { border-bottom: none; }
-.frase { font-size: 16px; font-weight: bold; color: #880e4f; margin-bottom: 5px; }
-.autor { font-size: 12px; color: #c2185b; text-transform: uppercase; letter-spacing: 1px; }
+/* Costat esquerre del desplegable amb el text d'introducció */
+.esquerra-frases {
+  /* Ocupa el 40% de l'amplada total del bloc */
+  width: 40%;
+  /* Posa un fons rosa cridaner per destacar la introducció */
+  background-color: #ec407a;
+  /* Fa que el text es vegi blanc per llegir-se bé */
+  color: white;
+  /* Deixa un coixí d'espai generós a tot el voltant de la lletra */
+  padding: 30px;
+  /* Activa flexbox per controlar la col·locació interna del text */
+  display: flex;
+  /* Ordena el títol i el paràgraf en vertical, un sobre de l'altre */
+  flex-direction: column;
+  /* Centra els textos verticalment dins del bloc rosa */
+  justify-content: center;
+}
+
+/* Títol de la secció de frases */
+.esquerra-frases h2 {
+  /* Defineix una mida gran per al títol de la introducció */
+  font-size: 28px;
+  /* Separa el títol del paràgraf que té a sota */
+  margin-bottom: 15px;
+}
+
+/* Paràgraf explicatiu de la introducció */
+.esquerra-frases p {
+  /* Mida de lletra estàndard i polida per al text llarg */
+  font-size: 15px;
+  /* Dona una mica de separació entre línies perquè es llegeixi millor */
+  line-height: 1.5;
+}
+
+/* Costat dret on s'acumulen les citacions dels cuiners */
+.dreta-frases {
+  /* Es queda amb el 60% d'amplada restant del bloc */
+  width: 60%;
+  /* Un fons rosa molt claret i suau perquè no cansi la vista */
+  background-color: #fff1f5;
+  /* Espai de coixí a l'interior perquè les frases respiren */
+  padding: 30px;
+  /* Activa flexbox per ordenar la llista de frases */
+  display: flex;
+  /* Col·loca les frases una sota de l'altra en vertical */
+  flex-direction: column;
+  /* Centra tot el grup de frases verticalment */
+  justify-content: center;
+  /* Deixa una separació de 20 píxels fixa entre frase i frase */
+  gap: 20px;
+}
+
+/* Cadascun dels blocs que conté una frase i el seu autor */
+.bloc-frase {
+  /* Dibuixa una línia de punts rosa clar a sota per separar les frases */
+  border-bottom: 1px solid #f8bbd0;
+  /* Espai a sota abans d'arribar a la línia divisòria */
+  padding-bottom: 10px;
+}
+
+/* Truc per a l'última frase de la llista */
+.bloc-frase:last-child {
+  /* Treu la línia de sota a l'última frase per no repetir el contorn */
+  border-bottom: none;
+}
+
+/* El text exacte de la citació */
+.frase {
+  /* Mida de lletra una mica més gran que la introducció */
+  font-size: 16px;
+  /* Text en negreta perquè destaqui la cita textualmente */
+  font-weight: bold;
+  /* Color lila fosc de la paleta per donar coherència visual */
+  color: #880e4f;
+  /* Separa la línia de la frase del nom de l'autor */
+  margin-bottom: 5px;
+}
+
+/* El nom del xef que ha dit la frase */
+.autor {
+  /* Lletra més petita perquè quedi en segon pla */
+  font-size: 12px;
+  /* Un rosa una mica més viu per diferenciar-lo de la frase */
+  color: #c2185b;
+  /* Força que el nom de l'autor surti tot en MAJÚSCULES */
+  text-transform: uppercase;
+  /* Separa una mica les lletres del nom per a un estil més elegant */
+  letter-spacing: 1px;
+}
+
 
 /* Dissenyo la franja del peu de tancament inferior de la pàgina */
 .peu { text-align: center; padding-top: 20px; border-top: 2px dashed #f8bbd0; }
 
-/* Dissenyo el botó flotant lila amb un cercle de punts com el meu dibuix */
+/* Dissenyo el botó flotant lila amb un cercle de punts com */
 #chat-toggle {
+  /* Fixa el botó a la pantalla perquè es quedi al seu lloc en fer scroll */
   position: fixed;
+  /* El separa 25 píxels des de la vora inferior del navegador */
   bottom: 25px;
+  /* El separa 25 píxels des de la vora dreta del navegador */
   right: 25px;
+  /* Posa el color rosa-lila claret de fons per al botó */
   background-color: #ff99dd;
+  /* Fa que l'emoticona o text de dins sigui de color lila fosc */
   color: #880e4f;
+  /* Dibuixa la vora de punts o línies tallades en un to lila fosc */
   border: 3px dashed #700470;
+  /* Arrodoneix les cantonades al màxim per transformar el botó en un cercle */
   border-radius: 50%;
+  /* Defineix l'amplada de la rodona del botó */
   width: 75px;
+  /* Defineix l'alçada de la rodona del botó */
   height: 75px;
+  /* Fa que l'icona del text es vegi gran i clara al mig */
   font-size: 20px;
+  /* Aplica un gruix de lletra en negreta a l'interior */
   font-weight: bold;
+  /* Canvia el ratolí per una mà per indicar que es pot pitjar */
   cursor: pointer;
+  /* El posa gairebé a la capa més alta de totes perquè res el tapi */
   z-index: 9998;
+  /* Fa que el moviment o efecte visual es vegi suau i fluid */
   transition: transform 0.3s ease;
 }
+
 
 /* Augmento de mida la bafarada circular del xatbot al posar-hi el ratolí */
 #chat-toggle:hover {
@@ -331,12 +479,115 @@ body {
 }
 
 /* Quadre modular per allotjar la interfície de conversa lila del bot */
-#chatbot-widget { position: fixed; bottom: 20px; right: 20px; width: 300px; max-height: 400px; background-color: rgb(243, 224, 255); border: 1px solid #700470; border-radius: 10px; box-shadow: 0 4px 8px rgba(106, 5, 116, 0.2); display: flex; flex-direction: column; overflow: hidden; font-family: Georgia, serif; z-index: 9999; }
-#chat-header { background-color: #f777cc; color: rgb(231, 185, 243); padding: 10px; text-align: center; font-weight: bold; }
-#chat-body { flex: 1; padding: 10px; overflow-y: auto; font-size: 14px; }
-.message { margin: 5px 0; }
-.user { text-align: right; color: #8d1a87; }
-.bot { text-align: left; color: #5e1979; }
-#chat-input { display: flex; border-top: 1px solid #d3b0f3; }
-#chat-input input { flex: 1; padding: 10px; border: none; font-size: 14px; }
-#chat-input button { padding: 10px; background-color: #ac2cd3; color: #ff99dd; border: none; cursor: pointer; }
+#chatbot-widget {
+  /* Deixa la finestra clavada a la pantalla perquè no es mogui en fer scroll */
+  position: fixed;
+  /* La separa 20 píxels des del fons de la finestra */
+  bottom: 20px;
+  /* La separa 20 píxels des de la vora dreta de la pantalla */
+  right: 20px;
+  /* Fixa l'amplada de la caixa de xat en 300 píxels */
+  width: 300px;
+  /* Limita l'alçada màxima de la finestra perquè no tapi tota la pantalla */
+  max-height: 400px;
+  /* Posa un color lila molt claret i suau de fons */
+  background-color: rgb(243, 224, 255);
+  /* Dibuixa una línia fina de contorn amb el lila fosc de la teva paleta */
+  border: 1px solid #700470;
+  /* Arrodoneix les quatre cantonades de la finestra del xat */
+  border-radius: 10px;
+  /* Afegeix una ombra suau per darrere per donar sensació de relleu i profunditat */
+  box-shadow: 0 4px 8px rgba(106, 5, 116, 0.2);
+  /* Activa flexbox per ordenar la capçalera, els missatges i l'input a dins */
+  display: flex;
+  /* Col·loca els elements un a sota de l'altre en forma de columna */
+  flex-direction: column;
+  /* Retalla qualsevol contingut que sobresurti de les cantonades arrodonides */
+  overflow: hidden;
+  /* Canvia la tipografia del xat a una tipografia elegant amb serifa (Georgia) */
+  font-family: Georgia, serif;
+  /* Es posa a la capa més alta de totes perquè quedi per sobre de qualsevol element */
+  z-index: 9999;
+}
+
+/* Barra superior del xat amb el nom del bot */
+#chat-header {
+  /* Posa un fons rosa cridaner per a la capçalera */
+  background-color: #f777cc;
+  /* Posa el text amb un lila claret de contrast */
+  color: rgb(231, 185, 243);
+  /* Deixa un espai de coixí de 10 píxels a l'interior de la barra */
+  padding: 10px;
+  /* Centra el nom del bot al mig de la barra */
+  text-align: center;
+  /* Fa que el text del títol surti en negreta */
+  font-weight: bold;
+}
+
+/* Espai central de la finestra on van apareixent les bofes de text */
+#chat-body {
+  /* Fa que aquesta zona s'estiri per ocupar tot l'espai lliure central */
+  flex: 1;
+  /* Espai de seguretat als costats perquè els missatges no toquin les vores */
+  padding: 10px;
+  /* Activa una barra de desplaçament vertical automàtica si hi ha molts missatges */
+  overflow-y: auto;
+  /* Fixa la mida de la lletra de la conversa en 14 píxels */
+  font-size: 14px;
+}
+
+/* Estil genèric per a qualsevol bloc de missatge de la llista */
+.message {
+  /* Deixa una mica de separació vertical entre missatge i missatge */
+  margin: 5px 0;
+}
+
+/* Modificador per als missatges que escriu l'usuari */
+.user {
+  /* Desplaça el text cap a la dreta de la finestra */
+  text-align: right;
+  /* Posa les lletres de l'usuari amb un color fúcsia fosc */
+  color: #8d1a87;
+}
+
+/* Modificador per als missatges que respon el Cookbot */
+.bot {
+  /* Desplaça el text cap a l'esquerra de la finestra */
+  text-align: left;
+  /* Posa les lletres del bot amb un color lila fosc potent */
+  color: #5e1979;
+}
+
+/* Barra inferior que agrupa el quadre de text i el botó d'enviar */
+#chat-input {
+  /* Activa flexbox per posar l'input i el botó costat a costat */
+  display: flex;
+  /* Dibuixa una línia divisòria a sobre per separar-ho de la conversa */
+  border-top: 1px solid #d3b0f3;
+}
+
+/* Camp de text on l'usuari escriu la seva pregunta */
+#chat-input input {
+  /* S'estira per ocupar tot l'espai que deixi lliure el botó d'enviar */
+  flex: 1;
+  /* Espai de coixí interior de 10 píxels perquè es pugui escriure còmodament */
+  padding: 10px;
+  /* Elimina el contorn gris per defecte de les caixes de text */
+  border: none;
+  /* Manté la mida de lletra de 14 píxels per anar a joc amb el xat */
+  font-size: 14px;
+}
+
+/* Botó amb l'icona del sobre per llançar el missatge */
+#chat-input button {
+  /* Espai interior de 10 píxels a tot el voltant de l'emoticona */
+  padding: 10px;
+  /* Posa un fons lila intens que destaca al final de la barra */
+  background-color: #ac2cd3;
+  /* Fa que l'emoticona del sobre es vegi de color rosa clar */
+  color: #ff99dd;
+  /* Treu la vora grisa per defecte del botó */
+  border: none;
+  /* Transforma el cursor en una mà quan et tecleges a sobre per enviar */
+  cursor: pointer;
+}
