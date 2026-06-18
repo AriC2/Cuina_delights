@@ -43,76 +43,128 @@
       <!-- Columna dreta buida que agafarà la foto de la cuina des del CSS -->
       <div class="columna-imatge-cuina"></div>
     </section>
-    <!-- Secció inferior amb les dues targetes de botons i el carrusel d'imatges -->
-    <section class="seccio-inferior">
-      <!-- Bloc de l'esquerra on s'ordenen les dues targetes de botons una sobre l'altra -->
-      <div class="bloc-botons-esquerra">
-        <div class="tarjeta-rosa">
-          <h3>Frases inspiradores</h3>
-          <p>Si no tens inspiració, consulta aquest espai!</p>
-          <button class="boto-clica" id="btn-frases">Clica!</button>
-        </div>
+<!-- Secció inferior principal que agrupa les targetes de botons i el carrusel d'imatges -->
+<section class="seccio-inferior">
+  
+  <!-- Contenidor de l'esquerra que organitza les dues targetes verticalment, una sobre l'altra -->
+  <div class="bloc-botons-esquerra">
+    
+    <!-- Primera targeta de color rosa dedicada a la secció de frases -->
+    <div class="tarjeta-rosa">
+      
+      <!-- Títol de la primera targeta -->
+      <h3>Frases inspiradores</h3>
+      
+      <!-- Text informatiu o descripció per a l'usuari -->
+      <p>Si no tens inspiració, consulta aquest espai!</p>
+      
+      <!-- Botó d'acció amb classe de disseny i un identificador únic per al JavaScript -->
+      <button class="boto-clica" id="btn-frases">Clica!</button>
+      
+    <!-- Tancament de la primera targeta rosa -->
+    </div>
 
-        <div class="tarjeta-rosa">
-          <h3>Idees de receptes fàcils, ràpides i bones</h3>
-          <p>Si no saps què cuinar, consulta aquest espai!</p>
-          <button class="boto-clica" id="btn-receptes">Clica!</button>
-        </div>
-      </div>
+    <!-- Segona targeta de color rosa dedicada a la secció de receptes -->
+    <div class="tarjeta-rosa">
+      
+      <!-- Títol de la segona targeta -->
+      <h3>Idees de receptes fàcils, ràpides i bones</h3>
+      
+      <!-- Text informatiu d'ajuda per a l'usuari -->
+      <p>Si no saps què cuinar, consulta aquest espai!</p>
+      
+      <!-- Botó d'acció -->
+      <button class="boto-clica" id="btn-receptes">Clica!</button>
+      
+    <!-- Tancament de la segona targeta rosa -->
+    </div>
+    
+  <!-- Tancament del contenidor del bloc esquerre -->
+  </div>
 
-      <!-- Bloc de la dreta on es col·loca el carrusel horitzontal amb les seves fletxes -->
+
+      <!-- Bloc de la dreta per al carrusel d'imatges amb els seus botons de navegació -->
       <div class="bloc-carrusel-dreta">
+        <!-- Botó per tornar a la imatge anterior -->
         <button class="boto-carrusel prev" id="btn-prev">❮</button>
+        
+        <!-- Finestra de retall que amaga les fotos que queden fora de la vista -->
         <div class="carrusel-contenidor">
+          <!-- Tira horitzontal que conté totes les fotos del carrusel -->
           <div class="carrusel-diapositives" id="carrusel-slides">
-            <!-- Quatre blocs de fotos nets i sense textos per evitar superposicions -->
+            <!-- Quatre imatges de fons definides per CSS, netes de text per no tapar res -->
             <div class="slide bg-1"></div>
             <div class="slide bg-2"></div>
             <div class="slide bg-3"></div>
             <div class="slide bg-4"></div>
           </div>
         </div>
+        
+        <!-- Botó per passar a la següent imatge -->
         <button class="boto-carrusel next" id="btn-next">❯</button>
       </div>
     </section>
 
-    <!-- Secció interna que es desplega per mostrar les frases dels xefs -->
+    <!-- Zona oculta que es mostrarà en clicar el botó de frases -->
     <section id="seccio-frases-desplegable" class="bloc-frases-intern transicio-frases" style="display: none;">
+      
+      <!-- Introducció i text motivacional del desplegable -->
       <div class="esquerra-frases">
         <h2>Frases inspiradores</h2>
         <p>Si penses que cuinar no serveix de res o ja no tens ganes, llegeix aquestes frases a veure si la teva ment canvia!</p>
       </div>
+      
+      <!-- Llista de cites cèlebres dels cuiners -->
       <div class="dreta-frases">
+        <!-- Frase 1: Thomas Keller -->
         <div class="bloc-frase"><p class="frase">"Una recepta no té ànima. És el cuiner qui ha de donar ànima a la recepta."</p><p class="autor">Thomas Keller</p></div>
+        
+        <!-- Frase 2: Alain Ducasse -->
         <div class="bloc-frase"><p class="frase">"No es tracta només de cuinar, es tracta de donar felicitat."</p><p class="autor">Alain Ducasse</p></div>
+        
+        <!-- Frase 3: Paul Bocuse -->
         <div class="bloc-frase"><p class="frase">"No és una bona cuina si no està feta d'amistat per a la persona a cui està destinada."</p><p class="autor">Paul Bocuse</p></div>
+        
+        <!-- Frase 4: José Andrés -->
         <div class="bloc-frase"><p class="frase">"La cuina és un llenguatge universal que ens connecta a tothom."</p><p class="autor">José Andrés</p></div>
       </div>
     </section>
 
-    <!-- Tancament inferior de la pàgina web -->
+    <!-- Peu de pàgina amb el missatge de comiat del lloc web -->
     <footer class="peu">
       <h2>No deixis de cuinar!</h2>
       <p>Consulta aquesta web cada cop que ho necessitis!</p>
     </footer>
+  <!-- Tancament de l'etiqueta principal que lliga tot el contingut de la pàgina -->
   </main>
 
-  <!-- Botó rodó flotant per activar el xatbot de la aplicació -->
+  <!-- Botó rodó flotant a la cantonada per obrir o tancar el xatbot -->
   <button id="chat-toggle" class="transicio-suau" style="display: none;">💬</button>
 
-  <!-- Estructura interior del xatbot del Cookbot de color lila -->
+  <!-- Finestra emergent del xatbot que conté tota la interfície de conversa -->
   <div id="chatbot-widget" style="display:none;">
+    
+    <!-- Barra superior amb el nom del bot per identificar l'assistent -->
     <div id="chat-header">Cookbot</div>
+    
+    <!-- Historial de la conversa on apareixerà la salutació i les respostes -->
     <div id="chat-body">
+      <!-- Missatge inicial de benvinguda de l'assistent virtual -->
       <div class="message bot">Hola! Sóc en Cookbot, sé molt de cuina i puc resoldre els teus dubtes!</div>
     </div>
+    
+    <!-- Zona inferior amb el quadre de text i el botó per enviar el missatge -->
     <div id="chat-input">
+      <!-- Camp on l'usuari escriu la seva consulta o dubte culinari -->
       <input type="text" id="user-input" placeholder="Escriu una pregunta..." />
+      
+      <!-- Botó d'enviament que activa la funció de JavaScript en fer-hi clic -->
       <button onclick="enviaMissatge()" id="btn-enviar">📨</button>
     </div>
   </div>
 
-  <!-- CORREGIT: Enllaçat del script funcional amb el punt i la barra per evitar errors -->
+
+  <!-- Enllaçat del script funcional amb el punt i la barra per evitar errors -->
   <script src="./script.js"></script>
 </body>
 </html>
